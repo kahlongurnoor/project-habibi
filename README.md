@@ -1,73 +1,62 @@
 # Project Habibi — Design System 2.0
 
-## Developer Reference Guide
+> **A comprehensive developer reference for building AI agent interfaces on Nexus.**
+> Extracted from the Figma Design System 2.0 — `Project Habibi Components` page.
 
-> **Source:** Figma Design System 2.0 — `Project Habibi Components` page
-> **Font Family:** Unilever Desire (display/branding), Inter (UI/body)
-> **Framework Target:** React + Tailwind CSS (utility-first)
-> **Base Unit:** 16px (1rem)
+| Detail | Value |
+|---|---|
+| **Font (UI)** | Inter |
+| **Font (Brand)** | Unilever Desire |
+| **Framework** | React + Tailwind CSS |
+| **Base Unit** | 16px (1rem) |
+| **Source** | [Figma File](https://www.figma.com/design/qafioCr7GiesyZtf90byDh/Design-System-2.0?node-id=339-11336) |
 
 ---
 
 ## Table of Contents
 
-1. [Design Tokens Overview](#1-design-tokens-overview)
-2. [Color System](#2-color-system)
-3. [Typography Scale](#3-typography-scale)
-4. [Spacing System](#4-spacing-system)
-5. [Buttons](#5-buttons)
-6. [Cards](#6-cards)
-7. [Modals & Dialogs](#7-modals--dialogs)
-8. [Charts & Graphs](#8-charts--graphs)
-9. [Dashboard Widgets](#9-dashboard-widgets)
-10. [Smaller Widgets & Inputs](#10-smaller-widgets--inputs)
-11. [Tailwind Config Reference](#11-tailwind-config-reference)
+- [Color System](#color-system)
+- [Typography Scale](#typography-scale)
+- [Spacing System](#spacing-system)
+- [Buttons](#buttons)
+- [UI Templates by Agent Type](#ui-templates-by-agent-type)
+  - [Template 1 — AI Analytics Chat Agent](#template-1--ai-analytics-chat-agent)
+  - [Template 2 — Component Showcase](#template-2--component-showcase)
+  - [Template 3 — Landing / Marketing Pages](#template-3--landing--marketing-pages)
+  - [Template 4 — Product Information / INCI Agent](#template-4--product-information--inci-agent)
+  - [Template 5 — Marketing Chat (Ideas)](#template-5--marketing-chat-ideas)
+- [Cards (Shared Components)](#cards-shared-components)
+- [Inputs, Badges & Widgets](#inputs-badges--widgets)
+- [Modals & Dialogs](#modals--dialogs)
+- [Tailwind Config](#tailwind-config)
+- [Quick Cheat Sheet](#quick-cheat-sheet)
 
 ---
 
-## 1. Design Tokens Overview
+## Color System
 
-Design tokens are the foundational variables that drive every visual decision in the system. Think of them as the single source of truth — if you change a token, every component using it updates automatically.
+The color system is split into **Primary Colors** (used for the majority of the UI) and **Secondary Colors** (used sparingly for accents, pills, alerts, and labels). Each color family uses a **25–900 shade scale** where lower numbers are lighter and higher numbers are darker.
 
-### How Tokens Map to Code
-
-| Figma Concept | React/CSS Concept | Tailwind Concept |
-|---|---|---|
-| Color Swatch | CSS Variable / const | `bg-brand-500`, `text-gray-700` |
-| Font Size | `font-size` | `text-sm`, `text-base`, `text-lg` |
-| Spacing | `padding` / `margin` / `gap` | `p-4`, `m-6`, `gap-3` |
-| Border Radius | `border-radius` | `rounded-lg`, `rounded-xl` |
-| Shadow | `box-shadow` | `shadow-sm`, `shadow-md` |
-
----
-
-## 2. Color System
-
-The color system is split into **Primary Colors** (used for the majority of the UI) and **Secondary Colors** (used sparingly for accents, pills, alerts, and labels).
-
-Each color family uses a **25–900 shade scale**. Lower numbers = lighter. Higher numbers = darker.
-
-### How to Read the Scale
-
+**How to read the scale:**
 - **25–100:** Backgrounds, subtle fills, hover states on light surfaces
 - **200–300:** Borders, dividers, disabled states
 - **400–500:** Icons, secondary text, mid-emphasis elements
 - **600–700:** Primary interactive elements (buttons, links, focused inputs)
 - **800–900:** High-contrast text, dark headers, darkest backgrounds
 
----
+### Primary Colors
 
-### 2.1 Primary Colors
+![Primary Color Palette](assets/color-palette-primary.svg)
 
-#### Brand (Purple — Primary Interactive Color)
+#### Brand (Purple) — Primary Interactive Color
 
-> Used across **all interactive elements**: buttons, links, inputs, focus rings, active states. This is the main personality color of the system.
+Used across **all interactive elements**: buttons, links, inputs, focus rings, active states.
 
-| Token | Hex | Tailwind Class | Usage |
+| Token | Hex | Tailwind | Usage |
 |---|---|---|---|
-| `brand-25` | `#FCFAFF` | `bg-brand-25` | Lightest background hover |
-| `brand-50` | `#F9F5FF` | `bg-brand-50` | Selected row bg, subtle highlight |
-| `brand-100` | `#F4EBFF` | `bg-brand-100` | Light badge bg, pill bg |
+| `brand-25` | `#FCFAFF` | `bg-brand-25` | Lightest bg hover |
+| `brand-50` | `#F9F5FF` | `bg-brand-50` | Selected row, subtle highlight |
+| `brand-100` | `#F4EBFF` | `bg-brand-100` | Light badge/pill bg |
 | `brand-200` | `#E9D7FE` | `border-brand-200` | Light border, focus ring tint |
 | `brand-300` | `#D6BBFB` | `border-brand-300` | Active border state |
 | `brand-400` | `#B692F6` | `text-brand-400` | Placeholder text, disabled icon |
@@ -77,235 +66,109 @@ Each color family uses a **25–900 shade scale**. Lower numbers = lighter. High
 | `brand-800` | `#53389E` | `text-brand-800` | Dark emphasis text |
 | `brand-900` | `#42307D` | `text-brand-900` | Headings on light bg |
 
-**React Usage:**
 ```jsx
-{/* Primary Button */}
-<button className="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg">
+// Primary Button
+<button className="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg font-semibold">
   Approve Plan
 </button>
 
-{/* Subtle Badge */}
-<span className="bg-brand-50 text-brand-700 px-2 py-1 rounded-full text-sm">
-  Active
-</span>
+// Subtle Badge
+<span className="bg-brand-50 text-brand-700 px-2 py-1 rounded-full text-sm">Active</span>
 ```
 
----
+#### Gray — Neutral Foundation
 
-#### Gray (Neutral Foundation)
+The backbone of UI design. Used for text, form fields, backgrounds, dividers, borders.
 
-> **The backbone of UI design.** Used for text, form fields, backgrounds, dividers, borders — nearly everything that isn't interactive.
-
-| Token | Hex | Tailwind Class | Usage |
+| Token | Hex | Tailwind | Usage |
 |---|---|---|---|
-| `gray-25` | `#FCFCFD` | `bg-gray-25` | Page background (lightest) |
-| `gray-50` | `#F9FAFB` | `bg-gray-50` | Card background, table row alt |
-| `gray-100` | `#F2F4F7` | `bg-gray-100` | Input background, sidebar bg |
+| `gray-25` | `#FCFCFD` | `bg-gray-25` | Page bg (lightest) |
+| `gray-50` | `#F9FAFB` | `bg-gray-50` | Card bg, table row alt |
+| `gray-100` | `#F2F4F7` | `bg-gray-100` | Input bg, sidebar bg |
 | `gray-200` | `#E4E7EC` | `border-gray-200` | Default borders, dividers |
-| `gray-300` | `#D0D5DD` | `border-gray-300` | Input borders, stronger dividers |
-| `gray-400` | `#98A2B3` | `text-gray-400` | Placeholder text, disabled text |
-| `gray-500` | `#667085` | `text-gray-500` | Supporting text, labels, captions |
+| `gray-300` | `#D0D5DD` | `border-gray-300` | Input borders |
+| `gray-400` | `#98A2B3` | `text-gray-400` | Placeholder text |
+| `gray-500` | `#667085` | `text-gray-500` | Supporting text, labels |
 | `gray-600` | `#475467` | `text-gray-600` | Body text (secondary) |
 | `gray-700` | `#344054` | `text-gray-700` | Body text (primary) |
-| `gray-800` | `#1D2939` | `text-gray-800` | Headings, bold text |
+| `gray-800` | `#1D2939` | `text-gray-800` | Headings |
 | `gray-900` | `#101828` | `text-gray-900` | Display text, highest contrast |
-
-**React Usage:**
-```jsx
-{/* Standard card layout */}
-<div className="bg-white border border-gray-200 rounded-xl p-6">
-  <h3 className="text-gray-900 text-lg font-semibold">Card Title</h3>
-  <p className="text-gray-500 text-sm mt-1">Supporting text goes here</p>
-  <div className="border-t border-gray-200 mt-4 pt-4">
-    {/* Card footer content */}
-  </div>
-</div>
-```
-
----
 
 #### Error / Red
 
-> Communicates **destructive actions, validation errors, and critical alerts.** Use sparingly for maximum impact.
+Destructive actions, validation errors, critical alerts.
 
-| Token | Hex | Tailwind Class | Usage |
-|---|---|---|---|
-| `error-50` | `#FEF3F2` | `bg-error-50` | Error message bg |
-| `error-100` | `#FEE4E2` | `bg-error-100` | Error badge bg |
-| `error-300` | `#FDA29B` | `border-error-300` | Error input border |
-| `error-400` | `#F97066` | `text-error-400` | Error icon |
-| `error-500` | `#F04438` | `bg-error-500` | Destructive button |
-| `error-600` | `#D92D20` | `bg-error-600` | Destructive button hover |
-| `error-700` | `#B42318` | `text-error-700` | Error text |
-| `error-800` | `#912018` | `text-error-800` | Dark error emphasis |
-| `error-900` | `#7A271A` | `text-error-900` | Darkest error text |
-
-**React Usage:**
-```jsx
-{/* Error state input */}
-<div>
-  <input className="border border-error-300 focus:ring-error-500 rounded-lg px-3 py-2" />
-  <p className="text-error-700 text-sm mt-1">This field is required</p>
-</div>
-
-{/* Destructive button */}
-<button className="bg-error-600 hover:bg-error-700 text-white px-4 py-2 rounded-lg">
-  Deactivate Account
-</button>
-```
-
----
+| Token | Hex | Key Usage |
+|---|---|---|
+| `error-50` | `#FEF3F2` | Error bg |
+| `error-300` | `#FDA29B` | Error input border |
+| `error-500` | `#F04438` | Destructive button |
+| `error-600` | `#D92D20` | Destructive hover |
+| `error-700` | `#B42318` | Error text |
 
 #### Warning / Yellow-Orange
 
-> Communicates **caution, pending states, and non-critical alerts.** Common in validation flows and status indicators.
+Caution, pending states, non-critical alerts.
 
-| Token | Hex | Tailwind Class | Usage |
-|---|---|---|---|
-| `warning-50` | `#FFFAEB` | `bg-warning-50` | Warning alert bg |
-| `warning-100` | `#FEF0C7` | `bg-warning-100` | Warning badge bg |
-| `warning-300` | `#FEC84B` | `border-warning-300` | Warning border |
-| `warning-400` | `#FDB022` | `text-warning-400` | Warning icon |
-| `warning-500` | `#F79009` | `bg-warning-500` | Warning indicator |
-| `warning-600` | `#DC6803` | `text-warning-600` | Warning text |
-| `warning-700` | `#B54708` | `text-warning-700` | Dark warning text |
-| `warning-900` | `#93370D` | `text-warning-900` | Darkest warning |
-
----
+| Token | Hex | Key Usage |
+|---|---|---|
+| `warning-50` | `#FFFAEB` | Warning bg |
+| `warning-300` | `#FEC84B` | Warning border |
+| `warning-500` | `#F79009` | Warning indicator |
+| `warning-700` | `#B54708` | Warning text |
 
 #### Success / Green
 
-> Communicates **confirmation, completion, and positive outcomes.** Used in toast notifications, success badges, and status pills.
+Confirmation, completion, positive outcomes.
 
-| Token | Hex | Tailwind Class | Usage |
-|---|---|---|---|
-| `success-100` | `#D1FADF` | `bg-success-100` | Success badge bg |
-| `success-200` | `#A6F4C5` | `bg-success-200` | Highlight bg |
-| `success-300` | `#6CE9A6` | `border-success-300` | Success border |
-| `success-400` | `#32D583` | `text-success-400` | Success icon |
-| `success-500` | `#12B76A` | `bg-success-500` | Active status pill |
-| `success-600` | `#039855` | `text-success-600` | Success text |
-| `success-700` | `#027A48` | `text-success-700` | Dark success text |
-| `success-800` | `#05603A` | `text-success-800` | Heading on success bg |
-| `success-900` | `#054F31` | `text-success-900` | Darkest success |
+| Token | Hex | Key Usage |
+|---|---|---|
+| `success-50` | `#ECFDF3` | Success bg |
+| `success-500` | `#12B76A` | Active pill |
+| `success-600` | `#039855` | Success text |
+| `success-700` | `#027A48` | Dark success |
+
+### Secondary Colors
+
+![Secondary Color Palette](assets/color-palette-secondary.svg)
+
+Secondary palettes (Blue Gray, Blue, Purple) are used for accent pills, data visualization, category indicators, and anywhere you need color variety without overriding the primary brand.
+
+| Palette | Key Shades | Primary Use |
+|---|---|---|
+| **Blue Gray** | `#4E5BA6` (500), `#101323` (900) | Text labels, dark theme backgrounds |
+| **Blue** | `#2E90FA` (500), `#1570EF` (600) | Charts, info badges, annotation labels |
+| **Purple** | `#7A5AF8` (500), `#6938EF` (600) | Accent interactive, category tags |
 
 ---
 
-### 2.2 Secondary Colors (Accents)
+## Typography Scale
 
-> These are used **sparingly** — for pills, labels, category indicators, data visualization, and anywhere you need color variety without overriding the primary brand.
-
-#### Blue Gray
-
-| Token | Hex | Usage |
-|---|---|---|
-| `bluegray-25` | `#FCFCFD` | Light bg |
-| `bluegray-50` | `#F8F9FC` | Subtle fill |
-| `bluegray-100` | `#EAECF5` | Borders |
-| `bluegray-200` | `#D5D9EB` | Spacer/divider indicators |
-| `bluegray-300` | `#AFB5D9` | Muted icons |
-| `bluegray-400` | `#717BBC` | Secondary icons |
-| `bluegray-500` | `#4E5BA6` | Text labels |
-| `bluegray-600` | `#3E4784` | Strong labels |
-| `bluegray-700` | `#363F72` | Dark text |
-| `bluegray-800` | `#293056` | Heading text |
-| `bluegray-900` | `#101323` | Display text, highest contrast |
-
-#### Blue
-
-| Token | Hex | Usage |
-|---|---|---|
-| `blue-25` | `#F5FAFF` | Info bg |
-| `blue-50` | `#EFF8FF` | Badge bg |
-| `blue-100` | `#D1E9FF` | Highlight |
-| `blue-200` | `#B2DDFF` | Light border |
-| `blue-300` | `#84CAFF` | Icon tint |
-| `blue-400` | `#53B1FD` | Link text (light mode) |
-| `blue-500` | `#2E90FA` | Chart accent, links |
-| `blue-600` | `#1570EF` | Primary info elements |
-| `blue-700` | `#175CD3` | Annotation labels, spacing guides |
-| `blue-800` | `#1849A9` | Strong emphasis |
-| `blue-900` | `#194185` | Dark heading |
-
-#### Purple (Accent — distinct from Brand)
-
-| Token | Hex | Usage |
-|---|---|---|
-| `purple-25` | `#FAFAFF` | Light bg |
-| `purple-50` | `#F4F3FF` | Badge bg |
-| `purple-100` | `#EBE9FE` | Highlight |
-| `purple-200` | `#D9D6FE` | Border |
-| `purple-300` | `#BDB4FE` | Icon |
-| `purple-400` | `#9B8AFB` | Mid text |
-| `purple-500` | `#7A5AF8` | Interactive |
-| `purple-600` | `#6938EF` | Strong interactive |
-| `purple-700` | `#5925DC` | Dark interactive |
-| `purple-800` | `#4A1FB8` | Emphasis |
-| `purple-900` | `#3E1C96` | Highest contrast |
-
----
-
-### 2.3 Dark Mode Palette
-
-The design system includes dark-themed components (visible on cards and dashboard screens). The dark theme uses:
-
-| Role | Hex | Description |
-|---|---|---|
-| Dark Background | `#101323` / `#1D2939` | Main panel background |
-| Dark Surface | `#293056` / `#344054` | Card surface on dark bg |
-| Dark Border | `#363F72` / `#475467` | Subtle borders on dark surfaces |
-| Dark Text Primary | `#FCFCFD` / `#F9FAFB` | White text on dark bg |
-| Dark Text Secondary | `#D0D5DD` / `#98A2B3` | Muted text on dark bg |
-| Dark Accent | `#7F56D9` / `#9E77ED` | Brand color on dark bg |
-
----
-
-## 3. Typography Scale
+![Typography Scale](assets/typography.svg)
 
 **Primary Font:** `Inter` (UI, body, all functional text)
 **Brand Font:** `Unilever Desire` (display headings, marketing copy)
 
-### 3.1 Display Sizes
+### Display Sizes
 
-| Token | Size | Weight | Line Height | Letter Spacing | Tailwind | Usage |
-|---|---|---|---|---|---|---|
-| Display 2xl/Regular | 72px | 400 | 90px | -2% | `text-7xl font-normal` | Hero headings |
-| Display 2xl/Bold | 72px | 700 | 90px | -2% | `text-7xl font-bold` | Bold hero headings |
-| Display xl/Regular | 60px | 400 | 72px | -2% | `text-6xl font-normal` | Section headings |
-| Display xl/Bold | 60px | 700 | 72px | -2% | `text-6xl font-bold` | Bold section headings |
-| Display lg/Regular | 48px | 400 | 60px | -2% | `text-5xl font-normal` | Page titles |
-| Display lg/Bold | 48px | 700 | 60px | -2% | `text-5xl font-bold` | Bold page titles |
-| Display md/Regular | 36px | 400 | 44px | -2% | `text-4xl font-normal` | Subsection titles |
-| Display md/Bold | 36px | 700 | 44px | -2% | `text-4xl font-bold` | Bold subsection titles |
-| Display sm/Regular | 30px | 400 | 38px | 0 | `text-3xl font-normal` | Card/widget titles |
-| Display sm/Bold | 30px | 700 | 38px | 0 | `text-3xl font-bold` | Bold card titles |
-| Display xs/Semibold | 24px | 600 | 32px | 0 | `text-2xl font-semibold` | Panel headings, section labels |
+| Token | Size | Weight | Line Height | Tailwind |
+|---|---|---|---|---|
+| Display 2xl | 72px | 700 | 90px | `text-7xl font-bold` |
+| Display xl | 60px | 700 | 72px | `text-6xl font-bold` |
+| Display lg | 48px | 700 | 60px | `text-5xl font-bold` |
+| Display md | 36px | 600 | 44px | `text-4xl font-semibold` |
+| Display sm | 30px | 600 | 38px | `text-3xl font-semibold` |
+| Display xs | 24px | 600 | 32px | `text-2xl font-semibold` |
 
-### 3.2 Body / Functional Text
+### Body / Functional Text
 
-| Token | Size | Weight | Line Height | Tailwind | Usage |
-|---|---|---|---|---|---|
-| Text xl/Regular | 20px | 400 | 30px | `text-xl` | Large body text |
-| Text xl/Semibold | 20px | 600 | 30px | `text-xl font-semibold` | Large bold label |
-| Text lg/Regular | 18px | 400 | 28px | `text-lg` | Descriptions, supporting text |
-| Text lg/Semibold | 18px | 600 | 28px | `text-lg font-semibold` | Sub-labels, form section headers |
-| Text md/Regular | 16px | 400 | 24px | `text-base` | Default body text |
-| Text md/Semibold | 16px | 600 | 24px | `text-base font-semibold` | Table headers, bold body |
-| Text sm/Regular | 14px | 400 | 20px | `text-sm` | Table cells, form labels |
-| Text sm/Semibold | 14px | 600 | 20px | `text-sm font-semibold` | Bold labels, badge text |
-| Text xs/Regular | 12px | 400 | 18px | `text-xs` | Captions, footnotes, timestamps |
-| Text xs/Semibold | 12px | 600 | 18px | `text-xs font-semibold` | Small bold indicators |
-
-### 3.3 Font Weights Available
-
-| Weight | Value | Tailwind | Available For |
-|---|---|---|---|
-| Regular | 400 | `font-normal` | Inter, Unilever Desire |
-| Light | 300 | `font-light` | Inter, Unilever Desire |
-| Semibold | 600 | `font-semibold` | Inter, Unilever Desire |
-| Bold | 700 | `font-bold` | Inter, Unilever Desire |
-
-### Typography in React — Quick Reference
+| Token | Size | Weight | Line Height | Tailwind |
+|---|---|---|---|---|
+| Text xl | 20px | 400/600 | 30px | `text-xl` |
+| Text lg | 18px | 400/600 | 28px | `text-lg` |
+| Text md | 16px | 400/600 | 24px | `text-base` |
+| Text sm | 14px | 400/600 | 20px | `text-sm` |
+| Text xs | 12px | 400/600 | 18px | `text-xs` |
 
 ```jsx
 {/* Page heading */}
@@ -314,141 +177,98 @@ The design system includes dark-themed components (visible on cards and dashboar
 </h1>
 
 {/* Section heading */}
-<h2 className="text-2xl font-semibold text-gray-900">
-  Spacing system guides
-</h2>
-
-{/* Supporting text */}
-<p className="text-lg text-bluegray-700 leading-7">
-  These spacing system guides are useful for annotating designs...
-</p>
+<h2 className="text-2xl font-semibold text-gray-900">Agent Performance</h2>
 
 {/* Body text */}
-<p className="text-base text-gray-700 leading-6">
-  Standard paragraph text used throughout the application.
-</p>
+<p className="text-base text-gray-700 leading-6">Standard paragraph text.</p>
 
-{/* Caption / timestamp */}
-<span className="text-xs text-gray-500">
-  Last updated: 2 hours ago
-</span>
+{/* Caption */}
+<span className="text-xs text-gray-500">Last updated: 2 hours ago</span>
 ```
 
 ---
 
-## 4. Spacing System
+## Spacing System
 
-The spacing system uses a **16px base** and follows standard rem increments. This maps 1:1 with default Tailwind spacing utilities.
+![Spacing System](assets/spacing.svg)
 
-### 4.1 Spacing Scale
+The spacing system uses a **16px base** and maps 1:1 with default Tailwind spacing utilities.
 
-| Token Name | Rem Value | Pixel Value | Tailwind Class | Common Usage |
+| Name | Rem | Pixels | Tailwind | Common Usage |
 |---|---|---|---|---|
-| `spacing-1` | 0.25rem | 4px | `p-1`, `m-1`, `gap-1` | Inline icon gap, tight padding |
-| `spacing-2` | 0.5rem | 8px | `p-2`, `m-2`, `gap-2` | Compact element gap |
-| `spacing-3` | 0.75rem | 12px | `p-3`, `m-3`, `gap-3` | Button padding-x, badge padding |
-| `spacing-4` | 1rem | 16px | `p-4`, `m-4`, `gap-4` | **Default internal padding**, card gap |
-| `spacing-5` | 1.25rem | 20px | `p-5`, `m-5`, `gap-5` | Medium padding |
-| `spacing-6` | 1.5rem | 24px | `p-6`, `m-6`, `gap-6` | **Default card padding**, section gap |
-| `spacing-8` | 2rem | 32px | `p-8`, `m-8`, `gap-8` | Large internal spacing |
-| `spacing-10` | 2.5rem | 40px | `p-10`, `gap-10` | Widget/section separation |
-| `spacing-12` | 3rem | 48px | `p-12`, `gap-12` | Panel section breaks |
-| `spacing-16` | 4rem | 64px | `p-16`, `gap-16` | **Major section dividers** |
-| `spacing-20` | 5rem | 80px | `py-20` | Page section padding |
-| `spacing-24` | 6rem | 96px | `py-24` | Hero section padding |
-| `spacing-32` | 8rem | 128px | — | Large layout sections |
-| `spacing-40` | 10rem | 160px | — | Full-page layout offset |
-| `spacing-48` | 12rem | 192px | — | Sidebar widths |
-| `spacing-56` | 14rem | 224px | — | Wide sidebar |
-| `spacing-64` | 16rem | 256px | — | Maximum spacer width |
+| 1 | 0.25rem | 4px | `p-1` / `gap-1` | Inline icon gap |
+| 2 | 0.5rem | 8px | `p-2` / `gap-2` | Compact gap |
+| 3 | 0.75rem | 12px | `p-3` / `gap-3` | Button padding-x, badge padding |
+| 4 | 1rem | 16px | `p-4` / `gap-4` | **Default internal padding** |
+| 5 | 1.25rem | 20px | `p-5` / `gap-5` | Medium padding |
+| 6 | 1.5rem | 24px | `p-6` / `gap-6` | **Default card padding** |
+| 8 | 2rem | 32px | `p-8` / `gap-8` | Large internal spacing |
+| 10 | 2.5rem | 40px | `p-10` / `gap-10` | Widget separation |
+| 12 | 3rem | 48px | `p-12` / `gap-12` | Panel section breaks |
+| 16 | 4rem | 64px | `p-16` / `gap-16` | **Major section dividers** |
+| 20 | 5rem | 80px | `py-20` | Page section padding |
+| 24 | 6rem | 96px | `py-24` | Hero section padding |
+| 32–64 | 8–16rem | 128–256px | — | Full layout offsets |
 
-### 4.2 Spacing Gameplay — When to Use What
+### When to Use What
 
-**Inside a component** (card, button, input):
-```
-Tight (4px–8px): Icon-to-text gaps, inline badge padding
-Default (12px–16px): Button padding, input padding, list item gap
-Roomy (20px–24px): Card internal padding, modal padding
-```
+**Inside a component** (card, button, input): Tight 4–8px for icon gaps, Default 12–16px for padding, Roomy 20–24px for card internals.
 
-**Between components** (sections, groups, layout):
-```
-Tight (8px–16px): Stacked form fields, table cell spacing
-Default (24px–32px): Cards in a grid, widget sections
-Spacious (48px–64px): Page sections, major content breaks
-```
+**Between components** (sections, groups): Tight 8–16px for stacked fields, Default 24–32px for grid cards, Spacious 48–64px for page sections.
 
-**React Pattern:**
 ```jsx
-{/* Card with standard spacing */}
-<div className="p-6 space-y-4">           {/* 24px padding, 16px gap between children */}
-  <div className="flex items-center gap-3"> {/* 12px icon-to-text gap */}
+<div className="p-6 space-y-4">            {/* 24px padding, 16px gap */}
+  <div className="flex items-center gap-3">  {/* 12px icon-to-text */}
     <Icon />
     <h3 className="text-lg font-semibold">Title</h3>
   </div>
   <p className="text-sm text-gray-500">Description</p>
-  <div className="flex gap-3 pt-4">        {/* 16px top padding before buttons */}
-    <button className="px-4 py-2">Action</button>
-  </div>
 </div>
 ```
 
 ---
 
-## 5. Buttons
+## Buttons
 
-The button system covers **6 visual hierarchies × 3 sizes × multiple states**.
+![Button Components](assets/buttons.svg)
 
-### 5.1 Button Hierarchy
+### Button Variants
 
-| Variant | Visual Style | When to Use |
+| Variant | Style | When to Use |
 |---|---|---|
-| **Primary** | `bg-brand-600` solid fill, white text | Main CTA — one per visible section max |
-| **Secondary Color** | `bg-brand-50` light fill, `text-brand-700` | Supporting action alongside primary |
-| **Secondary Gray** | `bg-white border border-gray-300`, `text-gray-700` | Default/neutral action |
-| **Tertiary Color** | No bg, `text-brand-700` | Low-emphasis actions, links in context |
-| **Tertiary Gray** | No bg, `text-gray-500` | Minimal emphasis, cancel/dismiss |
-| **Destructive** | `bg-error-600` solid fill, white text | Delete, deactivate, remove actions |
+| **Primary** | `bg-brand-600` solid, white text | Main CTA — one per section max |
+| **Secondary Color** | `bg-brand-50` light fill, `text-brand-700` | Supporting action |
+| **Secondary Gray** | White bg, `border-gray-300` | Neutral action |
+| **Tertiary Color** | No bg, `text-brand-700` | Low-emphasis, in-context links |
+| **Tertiary Gray** | No bg, `text-gray-500` | Cancel, dismiss |
+| **Destructive** | `bg-error-600` solid, white text | Delete, deactivate, remove |
 
-### 5.2 Button Sizes
+### Sizes
 
-| Size | Padding | Font Size | Height | Tailwind |
-|---|---|---|---|---|
-| **sm** | `px-3 py-2` | 14px (text-sm) | ~36px | `px-3 py-2 text-sm` |
-| **md** | `px-4 py-2.5` | 14px (text-sm) | ~40px | `px-4 py-2.5 text-sm` |
-| **lg** | `px-4 py-2.5` | 16px (text-base) | ~44px | `px-4 py-2.5 text-base` |
+| Size | Padding | Font | Tailwind |
+|---|---|---|---|
+| sm | `px-3 py-2` | 14px | `px-3 py-2 text-sm` |
+| md | `px-4 py-2.5` | 14px | `px-4 py-2.5 text-sm` |
+| lg | `px-4 py-2.5` | 16px | `px-4 py-2.5 text-base` |
 
-### 5.3 Button States
+### States
 
-| State | Change from Default |
+| State | Rule |
 |---|---|
-| **Default** | Base styles |
-| **Hover** | Darken bg by one shade (600→700) |
-| **Focused** | Add `ring-4 ring-brand-100` (focus ring) |
-| **Disabled** | `opacity-50 cursor-not-allowed` |
+| Hover | Darken bg one shade (600→700) |
+| Focus | `ring-4 ring-brand-100` |
+| Disabled | `opacity-50 cursor-not-allowed` |
 
-### 5.4 Button Sub-Variants
-
-Buttons support optional decorations:
-
-- **Text only** — just the label
-- **Leading icon** — icon before text (`<Icon /> Label`)
-- **Trailing icon** — icon after text (`Label <Icon />`)
-- **Leading + Trailing** — icon on both sides
-- **Icon only** — square button, just an icon (usually for toolbars)
-- **Dot indicator** — small colored dot before the label (status buttons)
-
-### 5.5 Button React Component Pattern
+### React Component Pattern
 
 ```jsx
-// Button.jsx
 const variants = {
-  primary: 'bg-brand-600 text-white hover:bg-brand-700 focus:ring-4 focus:ring-brand-100',
-  secondaryColor: 'bg-brand-50 text-brand-700 hover:bg-brand-100',
-  secondaryGray: 'bg-white border border-gray-300 text-gray-700 hover:bg-gray-50',
-  tertiaryColor: 'text-brand-700 hover:bg-brand-50',
-  tertiaryGray: 'text-gray-500 hover:bg-gray-50 hover:text-gray-700',
-  destructive: 'bg-error-600 text-white hover:bg-error-700 focus:ring-4 focus:ring-error-100',
+  primary:        'bg-brand-600 text-white hover:bg-brand-700 focus:ring-4 focus:ring-brand-100',
+  secondaryColor: 'bg-brand-50 text-brand-700 hover:bg-brand-100 border border-brand-200',
+  secondaryGray:  'bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 shadow-xs',
+  tertiaryColor:  'text-brand-700 hover:bg-brand-50',
+  tertiaryGray:   'text-gray-500 hover:bg-gray-50 hover:text-gray-700',
+  destructive:    'bg-error-600 text-white hover:bg-error-700 focus:ring-4 focus:ring-error-100',
 };
 
 const sizes = {
@@ -457,7 +277,7 @@ const sizes = {
   lg: 'px-4 py-2.5 text-base gap-2 rounded-lg',
 };
 
-function Button({ variant = 'primary', size = 'md', leadingIcon, trailingIcon, children, ...props }) {
+function Button({ variant = 'primary', size = 'md', children, ...props }) {
   return (
     <button
       className={`inline-flex items-center justify-center font-semibold transition-colors
@@ -465,428 +285,316 @@ function Button({ variant = 'primary', size = 'md', leadingIcon, trailingIcon, c
         disabled:opacity-50 disabled:cursor-not-allowed`}
       {...props}
     >
-      {leadingIcon && <span className="w-5 h-5">{leadingIcon}</span>}
       {children}
-      {trailingIcon && <span className="w-5 h-5">{trailingIcon}</span>}
     </button>
   );
 }
 ```
 
-### 5.6 Quick Filter Pills
+---
 
-A row of selectable pill-style buttons for filtering/tabs:
+## UI Templates by Agent Type
+
+The Project Habibi Components page contains **5 distinct UI template groups**, each designed for a different AI agent workflow. Every template exists in **light and dark mode** variants and shares the same underlying component library (sidebar, top nav, chat input, charts, cards, tool calls, toasts).
+
+---
+
+### Template 1 — AI Analytics Chat Agent
+
+> The core template. A full-screen chat interface with sidebar, conversation history, inline analytics generation, and tool call status cards. This is the primary UI pattern for building Nexus agents.
+
+**Variants in Figma:** Light mode, Dark mode, Minimal sidebar, "Back to Showcase" breadcrumb versions
+
+#### Light Mode
+
+![AI Chat Agent - Light](assets/template-chat-agent-light.svg)
+
+#### Dark Mode
+
+![AI Chat Agent - Dark](assets/template-chat-agent-dark.svg)
+
+#### Welcome / Empty State
+
+![Welcome State](assets/template-welcome-state.svg)
+
+#### Key Components in This Template
+
+| Component | Description | Tailwind Pattern |
+|---|---|---|
+| **Left Sidebar** | Chat history list + New Chat CTA | `w-[170px] bg-white border-r border-gray-200` (dark: `bg-gray-800`) |
+| **Top Navigation Bar** | Agent name + search + user avatar | `h-12 bg-white border-b flex items-center px-4` |
+| **Chat Message (AI)** | Avatar + name + timestamp + response + feedback icons | `flex gap-3`, avatar is `w-7 h-7 rounded-full bg-blue-50` |
+| **Chat Message (User)** | Right-aligned message + avatar | `flex flex-row-reverse gap-3` |
+| **Generated Analytics Cards** | Stat + chart in a bordered card, inline in chat | `border border-gray-200 rounded-xl p-5` |
+| **Tool Call — Success** | Green bg, check icon | `bg-success-50 border border-success-200 rounded-lg px-4 py-3` |
+| **Tool Call — Processing** | Yellow/amber bg, spinner | `bg-warning-50 border border-warning-200 rounded-lg px-4 py-3` |
+| **Tool Call — Error** | Red bg, X icon | `bg-error-50 border border-error-200 rounded-lg px-4 py-3` |
+| **Chat Input** | Attachment + mic + send button | `border border-gray-200 rounded-xl`, send button: `bg-blue-500 rounded-lg` |
 
 ```jsx
-{/* Quick Filters row */}
-<div className="flex items-center gap-2">
-  <button className="px-3 py-1.5 bg-brand-50 text-brand-700 text-sm font-medium rounded-full">
-    Default
-  </button>
-  <button className="px-3 py-1.5 bg-white border border-gray-200 text-gray-600 text-sm rounded-full hover:bg-gray-50">
-    Automatic
-  </button>
+{/* Tool Call Status Card */}
+<div className={`flex items-center justify-between px-4 py-3 rounded-lg border
+  ${status === 'success' ? 'bg-success-50 border-success-200' :
+    status === 'processing' ? 'bg-warning-50 border-warning-200' :
+    'bg-error-50 border-error-200'}`}>
+  <div className="flex items-center gap-3">
+    <ToolIcon className="w-5 h-5" />
+    <div>
+      <p className="text-sm font-medium text-gray-900">{toolName}</p>
+      {status === 'processing' && <p className="text-xs text-warning-600">Processing...</p>}
+    </div>
+  </div>
+  <StatusIcon />
+</div>
+```
+
+#### Extended View — Social Media Metrics + R&D Milestones
+
+One variant of this template includes expanded inline cards for social media performance and product development tracking.
+
+![Social Media & R&D](assets/template-social-rd.svg)
+
+| Component | Description |
+|---|---|
+| **Social Media Card** | Platform icon + followers + engagement + posts count. Uses `grid grid-cols-3 gap-4` |
+| **Aggregate Stat Row** | 4 stat boxes (Total Reach, Ad Spend, Clicks, Followers). Uses `grid grid-cols-4 gap-4` |
+| **Product Milestone Timeline** | Progress bar + status badges per step (Completed / In Progress / Pending / At Risk) |
+| **Roadmap Card** | Quarter-based cards with key features list + status pills |
+
+---
+
+### Template 2 — Component Showcase
+
+> A documentation/demo page that displays all available chat components in numbered sections. Used as a reference for builders exploring the design kit.
+
+**Variants:** Light, Dark, Blue-tinted, Ant Design themed, shadcn themed
+
+![Component Showcase](assets/template-component-showcase.svg)
+
+#### Sections Included
+
+| # | Section | What It Shows |
+|---|---|---|
+| 1 | **Chat Cards** | 4 agent category cards (General Assistant, Creative Writing, Code Helper, Personal Tutor) |
+| 2 | **Chat Conversation** | User/AI message bubbles with feedback icons |
+| 3 | **Left Sidebar** | Sidebar with chat history + New Chat button |
+| 4 | **Top Navigation Bar** | Agent name + search + user profile |
+| 5 | **Chat Input** | Text input + attachment/mic/send |
+| 6 | **Graphs and Charts** | Conversation Volume, Response Time, Monthly Usage, Category Distribution |
+| 7 | **Action Cards with Images** | Image header cards with action buttons (View, Edit, Download, Share) |
+| 8 | **Tool Call UI** | Success/processing/error tool status rows |
+| 9 | **Toast Notifications** | 6 toast types: Success, Error, Warning, Info, Custom, Loading |
+
+#### Chat Category Cards Pattern
+
+```jsx
+{/* Agent category cards — 2x2 grid */}
+<div className="grid grid-cols-2 gap-3">
+  <div className="flex items-center gap-3 p-4 rounded-xl border border-gray-200 bg-white hover:bg-gray-50">
+    <div className="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center">
+      <ChatIcon className="w-5 h-5 text-gray-600" />
+    </div>
+    <div>
+      <p className="text-sm font-semibold text-gray-900">General Assistant</p>
+      <p className="text-xs text-gray-500">Get help with everyday tasks</p>
+    </div>
+  </div>
+
+  <div className="flex items-center gap-3 p-4 rounded-xl bg-blue-500 text-white">
+    <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center">
+      <WriteIcon className="w-5 h-5 text-white" />
+    </div>
+    <div>
+      <p className="text-sm font-semibold">Creative Writing</p>
+      <p className="text-xs text-white/70">Brainstorm and write content</p>
+    </div>
+  </div>
 </div>
 ```
 
 ---
 
-## 6. Cards
+### Template 3 — Landing / Marketing Pages
 
-Cards are the most-used container component. The system defines several card types.
+> A hero + feature grid + theme preview page for marketing the AI Chat UI library. Multiple theme variants exist (shadcn, Ant Design, custom Unilever blue).
 
-### 6.1 Card Variants
+![Landing Page](assets/template-landing-page.svg)
 
-| Card Type | Description | Key Visual |
-|---|---|---|
-| **Simple Card** | Title + description + optional footer | White bg, `border border-gray-200`, `rounded-xl` |
-| **Card with Icon** | Icon left of the title row | 40px icon container, `gap-4` to text |
-| **Card with Action** | Includes inline button/CTA | Footer with divider, button aligned right |
-| **Stat Card** | Big number + label + optional trend icon | Number is `text-3xl font-semibold`, label is `text-sm text-gray-500` |
-| **Proposed Plan Card** | Multi-line summary + approve/reject buttons | Has version badge, numbered list, dual CTA |
-| **Agent Card** | Status indicator + name + pill | Status dot + pill component on the right |
-| **Feedback Card** | Metric cards in a row (total, positive, negative, rating) | Icon top-right, metric is large, label below |
+#### Theme Variants Available
 
-### 6.2 Base Card Structure
+| Theme | Primary | Secondary | Accent | Source |
+|---|---|---|---|---|
+| **shadcn** | `#18181b` | `#F4F4F5` | `#ef4444` | [shadcn/ui](https://ui.shadcn.com) |
+| **Ant Design** | `#1677FF` | `#52c41a` | `#faad14` | [Ant Design](https://ant.design) |
+| **Custom (Unilever Blue)** | `#005EEF` | `#7179BC` | `#5925DC` | Internal |
+
+#### Key Sections
+
+| Section | Description |
+|---|---|
+| **Hero** | Badge pill + H1 + subtitle + dual CTA (primary dark + secondary outlined) |
+| **Feature Grid** | 4 icon cards: Chat Components, Navigation, Data Visualization, Tool Integrations |
+| **Theme Preview** | Color swatches showing the 5 semantic colors with hex codes |
+| **CTA Footer** | "Ready to Build?" + Browse Components / View Full Template buttons |
+
+---
+
+### Template 4 — Product Information / INCI Agent
+
+> A structured card for displaying product ingredient data (INCI format). Used in Unilever's regulatory/product information agent workflows.
+
+![INCI Agent](assets/template-inci-agent.svg)
+
+#### Components
+
+| Component | Description |
+|---|---|
+| **Target Location Header** | Globe icon + location/language label (e.g., INCI:Canada / English_CA) |
+| **Ingredient List Block** | Full ingredients text in a bordered container |
+| **Ingredient Statements Table** | Purpose + Statement columns, red safety warning formatting |
 
 ```jsx
-{/* Base Card */}
+{/* INCI Card */}
+<div className="bg-white border border-gray-200 rounded-xl p-6">
+  <div className="flex items-center gap-2 mb-4">
+    <GlobeIcon className="w-5 h-5 text-gray-400" />
+    <span className="text-sm text-gray-500">Target Location/Language:</span>
+    <span className="text-sm font-bold text-gray-900">INCI:Canada/ English_CA</span>
+  </div>
+
+  <h3 className="text-base font-semibold text-gray-900 mb-2">≡ Ingredient List:</h3>
+  <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 text-sm text-gray-700 mb-6">
+    {ingredientText}
+  </div>
+
+  <h3 className="text-base font-semibold text-gray-900 mb-2">📋 Ingredient statements:</h3>
+  <table className="w-full text-sm border border-gray-200 rounded-lg overflow-hidden">
+    <thead className="bg-gray-100">
+      <tr>
+        <th className="px-4 py-2 text-left text-gray-700 font-semibold">Purpose</th>
+        <th className="px-4 py-2 text-left text-gray-700 font-semibold">Statement</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr className="border-t border-gray-200">
+        <td className="px-4 py-3 text-error-600 font-medium">⚠ SAFETY INSTRUCTIONS</td>
+        <td className="px-4 py-3">
+          <span className="font-bold text-error-700">CAUTION:</span> AVOID CONTACT WITH EYES.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+```
+
+---
+
+### Template 5 — Marketing Chat (Ideas)
+
+> A WIP template group labeled "Marketing Chat - Ideas" in Figma. Contains dark-themed mobile/desktop mockup concepts for a marketing-focused AI chat agent. I was unable to access the detailed child frames due to the Figma file size causing MCP timeouts on nodes past index 24 of the page.
+
+**What's visible from the overview screenshot:**
+- Dark-themed UI mockups (similar layout to the Analytics Chat Agent)
+- Mobile-responsive card layouts
+- Multiple screen variants showing different conversation states
+
+> **⚠️ Note for developers:** The detailed component breakdown for this template group needs to be extracted separately. If you need specifics, open the Figma file and look for frames near the "Marketing Chat - Ideas" title label (node `797:18`) in the lower-center area of the Project Habibi Components page.
+
+---
+
+## Cards (Shared Components)
+
+All templates share a common card component library. These cards are used across every agent interface.
+
+![Card Components](assets/cards.svg)
+
+### Card Types
+
+| Type | Description | Used In |
+|---|---|---|
+| **Simple Card** | Title + description + optional footer | All templates |
+| **Card with Icon** | Icon alongside the title row | Showcase, Landing |
+| **Stat Card** | Big number + label + optional trend | Chat Agent, Social Media |
+| **Proposed Plan** | Numbered summary + approve/reject CTAs | Chat Agent |
+| **Agent Card** | Name + status badge per row | Chat Agent |
+| **Feedback Card** | Metric row (total, positive, negative, rating) | Chat Agent |
+| **Action Card with Image** | Image header + title + action buttons | Showcase |
+| **Chat Category Card** | Agent type + description (colored variants) | Showcase |
+| **Social Media Card** | Platform stats (followers, engagement, posts) | Chat Agent Extended |
+| **INCI Card** | Ingredient list + safety statements | INCI Agent |
+
+### Base Card Structure
+
+```jsx
 <div className="bg-white border border-gray-200 rounded-xl shadow-sm">
-  {/* Card Header */}
+  {/* Header */}
   <div className="px-6 py-5">
-    <div className="flex items-center justify-between">
-      <h3 className="text-lg font-semibold text-gray-900">Card Title</h3>
-      <button className="text-gray-400 hover:text-gray-600">
-        {/* info/menu icon */}
-      </button>
-    </div>
-    <p className="text-sm text-gray-500 mt-1">Supporting description text</p>
+    <h3 className="text-lg font-semibold text-gray-900">Card Title</h3>
+    <p className="text-sm text-gray-500 mt-1">Supporting text</p>
   </div>
-
-  {/* Card Body */}
-  <div className="px-6 py-4">
-    {/* content */}
-  </div>
-
-  {/* Card Footer (optional) */}
-  <div className="px-6 py-4 border-t border-gray-200 flex items-center justify-end gap-3">
-    <button className="text-sm text-gray-500">Cancel</button>
-    <button className="bg-brand-600 text-white px-4 py-2 rounded-lg text-sm font-semibold">
-      Confirm
-    </button>
+  {/* Body */}
+  <div className="px-6 py-4">{/* content */}</div>
+  {/* Footer */}
+  <div className="px-6 py-4 border-t border-gray-200 flex justify-end gap-3">
+    <button className="...secondaryGray">Cancel</button>
+    <button className="...primary">Confirm</button>
   </div>
 </div>
 ```
 
-### 6.3 Stat Card Pattern
-
-These are used in dashboard rows (typically 3–5 per row).
+### Stat Card
 
 ```jsx
-{/* Stat Card */}
-<div className="bg-white border border-gray-200 rounded-xl p-6 min-w-[160px]">
+<div className="bg-white border border-gray-200 rounded-xl p-6">
   <div className="flex items-center justify-between mb-2">
-    <p className="text-sm text-gray-500 font-medium">Total Conversations</p>
+    <span className="text-sm text-gray-500 font-medium">Total Conversations</span>
     <InfoIcon className="w-4 h-4 text-gray-400" />
   </div>
-  <p className="text-3xl font-semibold text-gray-900">48</p>
-</div>
-```
-
-**Grid layout for stat rows:**
-```jsx
-<div className="grid grid-cols-3 gap-6">
-  <StatCard label="Total Conversations" value="48" />
-  <StatCard label="Total Time" value="288" />
-  <StatCard label="Correlation Rate" value="3.9M" />
-</div>
-```
-
-### 6.4 Proposed Plan Card (Agent-specific)
-
-A unique card used in the Nexus agent workflow:
-
-```jsx
-<div className="bg-white border border-gray-200 rounded-xl">
-  <div className="px-6 py-5 flex items-center justify-between">
-    <div className="flex items-center gap-2">
-      <span className="text-xs text-gray-500">4:15 p.m.</span>
-      <span className="text-sm font-semibold text-gray-900">Proposed Plan</span>
-    </div>
-    <span className="text-xs bg-brand-50 text-brand-700 px-2 py-0.5 rounded-full">
-      Version 1
-    </span>
-  </div>
-  <div className="px-6 pb-4">
-    <ol className="list-decimal list-inside text-sm text-gray-700 space-y-2">
-      <li>Cards can include buttons and interactive elements.</li>
-      <li>Cards can include buttons and interactive elements.</li>
-    </ol>
-  </div>
-  <div className="px-6 py-4 border-t border-gray-200 flex justify-end gap-3">
-    <button className="px-4 py-2 bg-white border border-gray-300 text-gray-700 text-sm font-semibold rounded-lg">
-      Edit Plan
-    </button>
-    <button className="px-4 py-2 bg-brand-600 text-white text-sm font-semibold rounded-lg flex items-center gap-2">
-      Approve Plan <CheckIcon className="w-4 h-4" />
-    </button>
-  </div>
+  <span className="text-3xl font-semibold text-gray-900">48</span>
 </div>
 ```
 
 ---
 
-## 7. Modals & Dialogs
+## Inputs, Badges & Widgets
 
-### 7.1 Modal Types
+![Inputs Badges Widgets](assets/inputs-badges.svg)
 
-| Type | Description |
-|---|---|
-| **Data Table Modal** | Scrollable table inside a modal (e.g., Event Type Distribution) |
-| **Date Picker Modal** | Calendar grid with range selection |
-| **Feedback Details Modal** | Key-value details view with status badges |
-| **Form Modal** | Input fields + submit (e.g., Red Team Test creation) |
-| **Confirmation Dialog** | Icon + title + description + dual buttons (success/destructive) |
-| **Create/Task Modal** | Sidebar-style modal with form fields and structured inputs |
-
-### 7.2 Base Modal Structure
+### Text Input
 
 ```jsx
-{/* Modal Backdrop */}
-<div className="fixed inset-0 bg-gray-900/60 flex items-center justify-center z-50">
-  {/* Modal Container */}
-  <div className="bg-white rounded-xl shadow-xl w-full max-w-lg mx-4">
-    {/* Modal Header */}
-    <div className="px-6 py-5 border-b border-gray-200 flex items-center justify-between">
-      <h2 className="text-lg font-semibold text-gray-900">Modal Title</h2>
-      <button className="text-gray-400 hover:text-gray-600">
-        <CloseIcon className="w-5 h-5" />
-      </button>
-    </div>
-
-    {/* Modal Body */}
-    <div className="px-6 py-5">
-      {/* content */}
-    </div>
-
-    {/* Modal Footer */}
-    <div className="px-6 py-4 border-t border-gray-200 flex justify-end gap-3">
-      <button className="px-4 py-2 border border-gray-300 text-gray-700 text-sm font-semibold rounded-lg">
-        Cancel
-      </button>
-      <button className="px-4 py-2 bg-brand-600 text-white text-sm font-semibold rounded-lg">
-        Confirm
-      </button>
-    </div>
-  </div>
-</div>
-```
-
-### 7.3 Confirmation Dialogs (Success / Destructive)
-
-```jsx
-{/* Success Confirmation */}
-<div className="bg-white rounded-xl p-6 max-w-sm text-center">
-  <div className="mx-auto w-12 h-12 bg-success-100 rounded-full flex items-center justify-center mb-4">
-    <CheckIcon className="w-6 h-6 text-success-600" />
-  </div>
-  <h3 className="text-lg font-semibold text-gray-900">Payment successful</h3>
-  <p className="text-sm text-gray-500 mt-2">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  </p>
-  <button className="mt-6 w-full px-4 py-2 bg-brand-600 text-white font-semibold rounded-lg">
-    Go to Dashboard
-  </button>
-</div>
-
-{/* Destructive Confirmation */}
-<div className="bg-white rounded-xl p-6 max-w-sm text-center">
-  <div className="mx-auto w-12 h-12 bg-error-100 rounded-full flex items-center justify-center mb-4">
-    <AlertIcon className="w-6 h-6 text-error-600" />
-  </div>
-  <h3 className="text-lg font-semibold text-gray-900">Deactivate account</h3>
-  <p className="text-sm text-gray-500 mt-2">
-    Are you sure? This action cannot be undone.
-  </p>
-  <div className="mt-6 flex gap-3">
-    <button className="flex-1 px-4 py-2 border border-gray-300 text-gray-700 font-semibold rounded-lg">
-      Cancel
-    </button>
-    <button className="flex-1 px-4 py-2 bg-error-600 text-white font-semibold rounded-lg">
-      Deactivate
-    </button>
-  </div>
-</div>
-```
-
----
-
-## 8. Charts & Graphs
-
-The design system defines chart building blocks, content patterns, and multiple chart types.
-
-### 8.1 Chart Types Available
-
-| Chart Type | Usage | Data Shape |
-|---|---|---|
-| **Line Chart** | Trends over time | x: time, y: numeric |
-| **Area Chart** | Volume over time | x: time, y: numeric (filled) |
-| **Vertical Bar Chart** | Category comparison | x: category, y: numeric |
-| **Horizontal Bar Chart** | Ranked comparisons | x: numeric, y: category |
-| **Pie Chart** | Proportional breakdown | label + value |
-| **Donut Chart** | Proportional with center label | label + value, center text |
-| **Radar Chart** | Multi-dimensional comparison | axes + values |
-| **Stacked Bar** | Composition over categories | x: category, y: stacked values |
-
-### 8.2 Chart Color Palette
-
-Charts use the **Blue** secondary palette as the primary data color:
-
-| Series | Color | Hex |
-|---|---|---|
-| Series 1 (primary) | Blue-600 | `#1570EF` |
-| Series 2 | Blue-400 | `#53B1FD` |
-| Series 3 | Blue-200 | `#B2DDFF` |
-| Accent / highlight | Brand-600 | `#6941C6` |
-| Negative / error | Error-500 | `#F04438` |
-| Positive / success | Success-500 | `#12B76A` |
-
-For pie charts, additional colors cycle through: `#1570EF`, `#F04438`, `#F79009`, `#12B76A`, `#6941C6`.
-
-### 8.3 Chart Building Blocks
-
-| Element | Description | Style |
-|---|---|---|
-| **Chart Container** | White card wrapper | `bg-white border border-gray-200 rounded-xl p-6` |
-| **Horizontal Axis** | Bottom labels | `text-xs text-gray-500`, ticks at `gray-200` |
-| **Vertical Axis** | Left labels | `text-xs text-gray-500`, gridlines at `gray-100` |
-| **Legend** | Color dot + label pairs | `flex gap-4`, dot is `w-2 h-2 rounded-full` |
-| **Chart Tooltip** | Hover detail box | `bg-gray-900 text-white px-3 py-2 rounded-lg text-xs shadow-lg` |
-
-### 8.4 Chart Card Pattern
-
-```jsx
-<div className="bg-white border border-gray-200 rounded-xl">
-  <div className="px-6 py-5 flex items-center justify-between">
-    <div>
-      <h3 className="text-base font-semibold text-gray-900">LLM Calls Over Time</h3>
-      <p className="text-sm text-gray-500 mt-0.5">Total: 12 Requests</p>
-    </div>
-    <button className="text-gray-400">
-      <InfoIcon className="w-5 h-5" />
-    </button>
-  </div>
-  <div className="px-6 pb-6 h-[240px]">
-    {/* Recharts / D3 chart renders here */}
-  </div>
-</div>
-```
-
----
-
-## 9. Dashboard Widgets
-
-Dashboard widgets are the complex composite components used in Nexus agent dashboards.
-
-### 9.1 Widget Types
-
-| Widget | Description |
-|---|---|
-| **Chat Input** | Text input with attachment + code + mic icons |
-| **System Variation Table** | Two-column table (orchestrator name + ID) |
-| **Available Agents Table** | Name + status pill per row |
-| **Red Team Test Card** | Empty state + CTA, or test list view |
-| **Agent Turn Card** | Expandable turn with role label + expand button |
-| **Notification Banner** | Full-width colored banner with icon + dismiss |
-| **Info Tile** | Title + body + optional tag |
-| **Metric Row** | 4-5 stat cards in a horizontal row |
-| **Feedback Panel** | Total/positive/negative/rating/satisfaction stat cards |
-
-### 9.2 Chat Input Widget
-
-```jsx
-<div className="bg-white border border-gray-200 rounded-xl">
-  <div className="px-4 py-3">
-    <input
-      type="text"
-      placeholder="What would you like to know?"
-      className="w-full text-sm text-gray-900 placeholder-gray-400 focus:outline-none"
-    />
-  </div>
-  <div className="px-4 py-2 border-t border-gray-100 flex items-center gap-3">
-    <button className="text-gray-400 hover:text-gray-600"><AttachIcon className="w-5 h-5" /></button>
-    <button className="text-gray-400 hover:text-gray-600"><CodeIcon className="w-5 h-5" /></button>
-    <button className="text-gray-400 hover:text-gray-600"><MicIcon className="w-5 h-5" /></button>
-    <div className="flex-1" />
-    <button className="bg-brand-600 text-white p-2 rounded-lg">
-      <SendIcon className="w-4 h-4" />
-    </button>
-  </div>
-</div>
-```
-
-### 9.3 Available Agents Table
-
-```jsx
-<div className="bg-white border border-gray-200 rounded-xl">
-  <div className="px-6 py-4 flex items-center justify-between border-b border-gray-200">
-    <h3 className="text-sm font-semibold text-gray-900">Available Agents</h3>
-    <span className="text-xs text-gray-500">Past 20 Seconds</span>
-  </div>
-  <div className="divide-y divide-gray-100">
-    {agents.map(agent => (
-      <div key={agent.name} className="px-6 py-3 flex items-center justify-between">
-        <span className="text-sm text-gray-700">{agent.name}</span>
-        <span className={`text-xs font-medium px-2.5 py-0.5 rounded-full
-          ${agent.status === 'Active'
-            ? 'bg-success-50 text-success-700'
-            : 'bg-error-50 text-error-700'
-          }`}>
-          {agent.status}
-        </span>
-      </div>
-    ))}
-  </div>
-</div>
-```
-
----
-
-## 10. Smaller Widgets & Inputs
-
-### 10.1 Text Input / Textarea
-
-```jsx
-{/* Standard Input */}
 <div>
-  <label className="block text-sm font-medium text-gray-700 mb-1.5">
-    Your message:
-  </label>
+  <label className="block text-sm font-medium text-gray-700 mb-1.5">Your message:</label>
   <input
     type="text"
     placeholder="Type your message here"
-    className="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg text-sm text-gray-900
-               placeholder-gray-400 focus:border-brand-300 focus:ring-4 focus:ring-brand-100
-               focus:outline-none transition-colors"
+    className="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg text-sm
+               placeholder-gray-400 focus:border-brand-300 focus:ring-4 focus:ring-brand-100"
   />
-  <p className="text-sm text-gray-500 mt-1.5">
-    Your message will be copied to the support team.
-  </p>
-</div>
-
-{/* Textarea */}
-<div>
-  <label className="block text-sm font-medium text-gray-700 mb-1.5">
-    Your message:
-  </label>
-  <textarea
-    rows={4}
-    placeholder="Type your message here"
-    className="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg text-sm text-gray-900
-               placeholder-gray-400 focus:border-brand-300 focus:ring-4 focus:ring-brand-100
-               resize-none"
-  />
+  <p className="text-sm text-gray-500 mt-1.5">Helper text goes here.</p>
 </div>
 ```
 
-### 10.2 Email Subscribe Input
+### Status Badges
 
 ```jsx
-<div className="flex gap-2">
-  <div className="flex-1">
-    <label className="block text-sm font-medium text-gray-700 mb-1.5">Email</label>
-    <input
-      type="email"
-      placeholder="Enter your email address"
-      className="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg text-sm"
-    />
-  </div>
-  <button className="self-end px-4 py-2.5 bg-brand-600 text-white text-sm font-semibold rounded-lg">
-    Subscribe
-  </button>
-</div>
+{/* Success */}
+<span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 text-xs font-medium rounded-full bg-success-50 text-success-700">
+  <span className="w-1.5 h-1.5 rounded-full bg-success-500" /> Active
+</span>
+
+{/* Error */}
+<span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 text-xs font-medium rounded-full bg-error-50 text-error-700">
+  <span className="w-1.5 h-1.5 rounded-full bg-error-500" /> Inactive
+</span>
+
+{/* Info */}
+<span className="px-2.5 py-0.5 text-xs font-medium rounded-full bg-brand-50 text-brand-700">
+  Version 1
+</span>
 ```
 
-### 10.3 Dropdown / Select Menu
-
-```jsx
-<div className="bg-white border border-gray-200 rounded-lg shadow-lg py-1 min-w-[200px]">
-  <div className="px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 cursor-pointer flex items-center justify-between">
-    <span>Keyword</span>
-    <span className="text-xs text-gray-400">⌘1</span>
-  </div>
-  <div className="px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 cursor-pointer flex items-center justify-between">
-    <span>Reword</span>
-    <span className="text-xs text-gray-400">⌘2</span>
-  </div>
-  <div className="border-t border-gray-100 my-1" />
-  <div className="px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 cursor-pointer">
-    More Tools
-  </div>
-</div>
-```
-
-### 10.4 Tabs / Navigation Pills
+### Tabs
 
 ```jsx
 {/* Underline Tabs */}
@@ -894,85 +602,93 @@ Dashboard widgets are the complex composite components used in Nexus agent dashb
   <button className="px-4 py-3 text-sm font-semibold text-brand-600 border-b-2 border-brand-600">
     Getting started
   </button>
-  <button className="px-4 py-3 text-sm text-gray-500 hover:text-gray-700">
-    Components
-  </button>
-  <button className="px-4 py-3 text-sm text-gray-500 hover:text-gray-700">
-    Documentation
-  </button>
+  <button className="px-4 py-3 text-sm text-gray-500 hover:text-gray-700">Components</button>
 </div>
 
 {/* Pill Tabs */}
-<div className="flex gap-2 p-1 bg-gray-100 rounded-lg">
-  <button className="px-3 py-1.5 text-sm font-medium bg-white text-gray-900 rounded-md shadow-sm">
-    Default
-  </button>
-  <button className="px-3 py-1.5 text-sm text-gray-500 rounded-md">
-    Automatic
-  </button>
+<div className="flex gap-1 p-1 bg-gray-100 rounded-lg">
+  <button className="px-3 py-1.5 text-sm font-medium bg-white rounded-md shadow-sm">Default</button>
+  <button className="px-3 py-1.5 text-sm text-gray-500 rounded-md">Automatic</button>
 </div>
 ```
 
-### 10.5 Toggle / Radio
+### Chat Input Widget
 
 ```jsx
-{/* Toggle Group */}
-<div className="flex items-center gap-4">
-  <label className="flex items-center gap-2 cursor-pointer">
-    <div className="relative">
-      <input type="radio" name="mode" className="sr-only peer" defaultChecked />
-      <div className="w-4 h-4 rounded-full border-2 border-gray-300 peer-checked:border-brand-600 peer-checked:border-[5px]" />
-    </div>
-    <span className="text-sm text-gray-700">Allowance mode</span>
-  </label>
-  <label className="flex items-center gap-2 cursor-pointer">
-    <div className="relative">
-      <input type="radio" name="mode" className="sr-only peer" />
-      <div className="w-4 h-4 rounded-full border-2 border-gray-300 peer-checked:border-brand-600 peer-checked:border-[5px]" />
-    </div>
-    <span className="text-sm text-gray-700">Allowance mode</span>
-  </label>
-</div>
-```
-
-### 10.6 Checkbox
-
-```jsx
-<label className="flex items-start gap-3 cursor-pointer">
-  <input type="checkbox" className="mt-0.5 w-4 h-4 rounded border-gray-300 text-brand-600 focus:ring-brand-500" />
-  <div>
-    <p className="text-sm font-medium text-gray-700">Accept terms and condition</p>
-    <p className="text-sm text-gray-500">
-      You agree to our Terms of Service and Privacy Policy.
-    </p>
+<div className="bg-white border border-gray-200 rounded-xl">
+  <div className="px-4 py-3">
+    <input placeholder="What would you like to know?"
+           className="w-full text-sm placeholder-gray-400 focus:outline-none" />
   </div>
-</label>
-```
-
-### 10.7 Badge / Pill Component
-
-```jsx
-{/* Status Badges */}
-<span className="inline-flex items-center gap-1 px-2 py-0.5 text-xs font-medium rounded-full bg-success-50 text-success-700">
-  <span className="w-1.5 h-1.5 rounded-full bg-success-500" />
-  Active
-</span>
-
-<span className="inline-flex items-center gap-1 px-2 py-0.5 text-xs font-medium rounded-full bg-error-50 text-error-700">
-  <span className="w-1.5 h-1.5 rounded-full bg-error-500" />
-  Inactive
-</span>
-
-<span className="inline-flex items-center gap-1 px-2 py-0.5 text-xs font-medium rounded-full bg-brand-50 text-brand-700">
-  Version 1
-</span>
+  <div className="px-4 py-2 border-t border-gray-100 flex items-center gap-3">
+    <AttachIcon /><CodeIcon /><MicIcon />
+    <div className="flex-1" />
+    <button className="bg-brand-600 text-white p-2 rounded-lg"><SendIcon /></button>
+  </div>
+</div>
 ```
 
 ---
 
-## 11. Tailwind Config Reference
+## Modals & Dialogs
 
-Below is the `tailwind.config.js` extension to register all of the design tokens above so that you can use them as native utility classes.
+![Modals and Dialogs](assets/modals.svg)
+
+### Modal Types
+
+| Type | Use Case |
+|---|---|
+| **Success Confirmation** | Payment processed, action completed |
+| **Destructive Confirmation** | Delete, deactivate, irreversible actions |
+| **Info / Details** | View feedback, inspect record details |
+| **Form Modal** | Create test, edit settings |
+| **Data Table Modal** | Event distribution, scrollable table |
+
+### Base Modal Structure
+
+```jsx
+{/* Backdrop */}
+<div className="fixed inset-0 bg-gray-900/60 flex items-center justify-center z-50">
+  {/* Container */}
+  <div className="bg-white rounded-xl shadow-xl w-full max-w-lg mx-4">
+    {/* Header */}
+    <div className="px-6 py-5 border-b border-gray-200 flex items-center justify-between">
+      <h2 className="text-lg font-semibold text-gray-900">Modal Title</h2>
+      <button className="text-gray-400 hover:text-gray-600"><CloseIcon /></button>
+    </div>
+    {/* Body */}
+    <div className="px-6 py-5">{/* content */}</div>
+    {/* Footer */}
+    <div className="px-6 py-4 border-t border-gray-200 flex justify-end gap-3">
+      <Button variant="secondaryGray">Cancel</Button>
+      <Button variant="primary">Confirm</Button>
+    </div>
+  </div>
+</div>
+```
+
+### Confirmation Dialog Pattern
+
+```jsx
+{/* Centered icon + text + actions */}
+<div className="bg-white rounded-xl p-6 max-w-sm text-center">
+  {/* Icon circle — swap colors for success/destructive */}
+  <div className="mx-auto w-12 h-12 bg-success-100 rounded-full flex items-center justify-center mb-4">
+    <CheckIcon className="w-6 h-6 text-success-600" />
+  </div>
+  <h3 className="text-lg font-semibold text-gray-900">Payment successful</h3>
+  <p className="text-sm text-gray-500 mt-2">Your payment has been processed.</p>
+  <button className="mt-6 w-full bg-brand-600 text-white py-2.5 rounded-lg font-semibold">
+    Go to Dashboard
+  </button>
+</div>
+```
+
+---
+
+## Tailwind Config
+
+Drop-in `tailwind.config.js` extension to register all design tokens:
 
 ```js
 // tailwind.config.js
@@ -985,161 +701,56 @@ module.exports = {
       },
       colors: {
         brand: {
-          25:  '#FCFAFF',
-          50:  '#F9F5FF',
-          100: '#F4EBFF',
-          200: '#E9D7FE',
-          300: '#D6BBFB',
-          400: '#B692F6',
-          500: '#9E77ED',
-          600: '#6941C6',
-          700: '#7F56D9',
-          800: '#53389E',
-          900: '#42307D',
+          25: '#FCFAFF', 50: '#F9F5FF', 100: '#F4EBFF', 200: '#E9D7FE',
+          300: '#D6BBFB', 400: '#B692F6', 500: '#9E77ED', 600: '#6941C6',
+          700: '#7F56D9', 800: '#53389E', 900: '#42307D',
         },
         gray: {
-          25:  '#FCFCFD',
-          50:  '#F9FAFB',
-          100: '#F2F4F7',
-          200: '#E4E7EC',
-          300: '#D0D5DD',
-          400: '#98A2B3',
-          500: '#667085',
-          600: '#475467',
-          700: '#344054',
-          800: '#1D2939',
-          900: '#101828',
+          25: '#FCFCFD', 50: '#F9FAFB', 100: '#F2F4F7', 200: '#E4E7EC',
+          300: '#D0D5DD', 400: '#98A2B3', 500: '#667085', 600: '#475467',
+          700: '#344054', 800: '#1D2939', 900: '#101828',
         },
         error: {
-          25:  '#FFFBFA',
-          50:  '#FEF3F2',
-          100: '#FEE4E2',
-          200: '#FECDCA',
-          300: '#FDA29B',
-          400: '#F97066',
-          500: '#F04438',
-          600: '#D92D20',
-          700: '#B42318',
-          800: '#912018',
-          900: '#7A271A',
+          25: '#FFFBFA', 50: '#FEF3F2', 100: '#FEE4E2', 200: '#FECDCA',
+          300: '#FDA29B', 400: '#F97066', 500: '#F04438', 600: '#D92D20',
+          700: '#B42318', 800: '#912018', 900: '#7A271A',
         },
         warning: {
-          25:  '#FFFCF5',
-          50:  '#FFFAEB',
-          100: '#FEF0C7',
-          200: '#FEDF89',
-          300: '#FEC84B',
-          400: '#FDB022',
-          500: '#F79009',
-          600: '#DC6803',
-          700: '#B54708',
-          800: '#93370D',
-          900: '#7A2E0E',
+          25: '#FFFCF5', 50: '#FFFAEB', 100: '#FEF0C7', 200: '#FEDF89',
+          300: '#FEC84B', 400: '#FDB022', 500: '#F79009', 600: '#DC6803',
+          700: '#B54708', 800: '#93370D', 900: '#7A2E0E',
         },
         success: {
-          25:  '#F6FEF9',
-          50:  '#ECFDF3',
-          100: '#D1FADF',
-          200: '#A6F4C5',
-          300: '#6CE9A6',
-          400: '#32D583',
-          500: '#12B76A',
-          600: '#039855',
-          700: '#027A48',
-          800: '#05603A',
-          900: '#054F31',
+          25: '#F6FEF9', 50: '#ECFDF3', 100: '#D1FADF', 200: '#A6F4C5',
+          300: '#6CE9A6', 400: '#32D583', 500: '#12B76A', 600: '#039855',
+          700: '#027A48', 800: '#05603A', 900: '#054F31',
         },
         bluegray: {
-          25:  '#FCFCFD',
-          50:  '#F8F9FC',
-          100: '#EAECF5',
-          200: '#D5D9EB',
-          300: '#AFB5D9',
-          400: '#717BBC',
-          500: '#4E5BA6',
-          600: '#3E4784',
-          700: '#363F72',
-          800: '#293056',
-          900: '#101323',
+          25: '#FCFCFD', 50: '#F8F9FC', 100: '#EAECF5', 200: '#D5D9EB',
+          300: '#AFB5D9', 400: '#717BBC', 500: '#4E5BA6', 600: '#3E4784',
+          700: '#363F72', 800: '#293056', 900: '#101323',
         },
         blue: {
-          25:  '#F5FAFF',
-          50:  '#EFF8FF',
-          100: '#D1E9FF',
-          200: '#B2DDFF',
-          300: '#84CAFF',
-          400: '#53B1FD',
-          500: '#2E90FA',
-          600: '#1570EF',
-          700: '#175CD3',
-          800: '#1849A9',
-          900: '#194185',
+          25: '#F5FAFF', 50: '#EFF8FF', 100: '#D1E9FF', 200: '#B2DDFF',
+          300: '#84CAFF', 400: '#53B1FD', 500: '#2E90FA', 600: '#1570EF',
+          700: '#175CD3', 800: '#1849A9', 900: '#194185',
         },
         purple: {
-          25:  '#FAFAFF',
-          50:  '#F4F3FF',
-          100: '#EBE9FE',
-          200: '#D9D6FE',
-          300: '#BDB4FE',
-          400: '#9B8AFB',
-          500: '#7A5AF8',
-          600: '#6938EF',
-          700: '#5925DC',
-          800: '#4A1FB8',
-          900: '#3E1C96',
+          25: '#FAFAFF', 50: '#F4F3FF', 100: '#EBE9FE', 200: '#D9D6FE',
+          300: '#BDB4FE', 400: '#9B8AFB', 500: '#7A5AF8', 600: '#6938EF',
+          700: '#5925DC', 800: '#4A1FB8', 900: '#3E1C96',
         },
       },
-      borderRadius: {
-        'xs': '4px',
-        'sm': '6px',
-        'md': '8px',
-        'lg': '12px',
-        'xl': '16px',
-        '2xl': '20px',
-        'full': '9999px',
-      },
       boxShadow: {
-        'xs': '0px 1px 2px rgba(16, 24, 40, 0.05)',
-        'sm': '0px 1px 3px rgba(16, 24, 40, 0.1), 0px 1px 2px rgba(16, 24, 40, 0.06)',
-        'md': '0px 4px 8px -2px rgba(16, 24, 40, 0.1), 0px 2px 4px -2px rgba(16, 24, 40, 0.06)',
-        'lg': '0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03)',
-        'xl': '0px 20px 24px -4px rgba(16, 24, 40, 0.08), 0px 8px 8px -4px rgba(16, 24, 40, 0.03)',
+        xs: '0px 1px 2px rgba(16, 24, 40, 0.05)',
+        sm: '0px 1px 3px rgba(16, 24, 40, 0.1), 0px 1px 2px rgba(16, 24, 40, 0.06)',
+        md: '0px 4px 8px -2px rgba(16, 24, 40, 0.1), 0px 2px 4px -2px rgba(16, 24, 40, 0.06)',
+        lg: '0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03)',
+        xl: '0px 20px 24px -4px rgba(16, 24, 40, 0.08), 0px 8px 8px -4px rgba(16, 24, 40, 0.03)',
       },
     },
   },
 };
-```
-
-### CSS Variables Alternative (for non-Tailwind setups)
-
-```css
-:root {
-  /* Brand */
-  --color-brand-600: #6941C6;
-  --color-brand-700: #7F56D9;
-  --color-brand-50: #F9F5FF;
-
-  /* Gray */
-  --color-gray-900: #101828;
-  --color-gray-700: #344054;
-  --color-gray-500: #667085;
-  --color-gray-300: #D0D5DD;
-  --color-gray-200: #E4E7EC;
-  --color-gray-50: #F9FAFB;
-
-  /* Spacing */
-  --spacing-1: 0.25rem;  /* 4px */
-  --spacing-2: 0.5rem;   /* 8px */
-  --spacing-3: 0.75rem;  /* 12px */
-  --spacing-4: 1rem;     /* 16px */
-  --spacing-6: 1.5rem;   /* 24px */
-  --spacing-8: 2rem;     /* 32px */
-  --spacing-16: 4rem;    /* 64px */
-
-  /* Typography */
-  --font-display: 'Unilever Desire', serif;
-  --font-body: 'Inter', system-ui, sans-serif;
-}
 ```
 
 ---
@@ -1149,7 +760,7 @@ module.exports = {
 | What You Need | Tailwind Classes |
 |---|---|
 | Primary button | `bg-brand-600 hover:bg-brand-700 text-white px-4 py-2.5 text-sm font-semibold rounded-lg` |
-| Secondary button | `bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 px-4 py-2.5 text-sm font-semibold rounded-lg` |
+| Secondary button | `bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 px-4 py-2.5 text-sm font-semibold rounded-lg shadow-xs` |
 | Destructive button | `bg-error-600 hover:bg-error-700 text-white px-4 py-2.5 text-sm font-semibold rounded-lg` |
 | Card container | `bg-white border border-gray-200 rounded-xl shadow-sm` |
 | Card padding | `p-6` (24px) |
@@ -1158,11 +769,11 @@ module.exports = {
 | Supporting text | `text-sm text-gray-500` |
 | Page heading | `text-3xl font-bold text-gray-900` |
 | Input field | `w-full px-3.5 py-2.5 border border-gray-300 rounded-lg text-sm focus:ring-4 focus:ring-brand-100 focus:border-brand-300` |
-| Status badge (success) | `bg-success-50 text-success-700 px-2 py-0.5 text-xs font-medium rounded-full` |
-| Status badge (error) | `bg-error-50 text-error-700 px-2 py-0.5 text-xs font-medium rounded-full` |
+| Badge (success) | `bg-success-50 text-success-700 px-2.5 py-0.5 text-xs font-medium rounded-full` |
+| Badge (error) | `bg-error-50 text-error-700 px-2.5 py-0.5 text-xs font-medium rounded-full` |
 | Modal overlay | `fixed inset-0 bg-gray-900/60 flex items-center justify-center z-50` |
 | Modal container | `bg-white rounded-xl shadow-xl w-full max-w-lg` |
 
 ---
 
-*Generated from Figma Design System 2.0 — Project Habibi Components page. For questions, reach out to the design team or reference the Figma file directly.*
+*Built for Project Habibi / Nexus — Horizon 3 Labs. For questions, reference the [Figma source file](https://www.figma.com/design/qafioCr7GiesyZtf90byDh/Design-System-2.0?node-id=339-11336).*
