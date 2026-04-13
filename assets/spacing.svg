@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 340" font-family="Inter, system-ui, sans-serif">
+  <rect width="880" height="340" fill="#FCFCFD"/>
+  <text x="32" y="40" font-size="22" font-weight="700" fill="#101828">Spacing System</text>
+  <text x="32" y="62" font-size="13" fill="#667085">16px base — maps directly to Tailwind spacing utilities (p-1 through p-16)</text>
+
+  
+    <text x="48" y="92" font-size="13" font-weight="600" fill="#344054" text-anchor="end">1</text>
+    <rect x="60" y="80" width="12" height="16" rx="3" fill="#D5D9EB"/>
+    <text x="80" y="92" font-size="11" fill="#667085">0.25rem · 4px</text>
+    <rect x="680" y="80" width="52" height="18" rx="4" fill="#EFF8FF"/>
+    <text x="706" y="93" font-size="10" fill="#175CD3" text-anchor="middle">p-1</text>
+    <text x="48" y="116" font-size="13" font-weight="600" fill="#344054" text-anchor="end">2</text>
+    <rect x="60" y="104" width="24" height="16" rx="3" fill="#D5D9EB"/>
+    <text x="92" y="116" font-size="11" fill="#667085">0.5rem · 8px</text>
+    <rect x="680" y="104" width="52" height="18" rx="4" fill="#EFF8FF"/>
+    <text x="706" y="117" font-size="10" fill="#175CD3" text-anchor="middle">p-2</text>
+    <text x="48" y="140" font-size="13" font-weight="600" fill="#344054" text-anchor="end">3</text>
+    <rect x="60" y="128" width="36" height="16" rx="3" fill="#D5D9EB"/>
+    <text x="104" y="140" font-size="11" fill="#667085">0.75rem · 12px</text>
+    <rect x="680" y="128" width="52" height="18" rx="4" fill="#EFF8FF"/>
+    <text x="706" y="141" font-size="10" fill="#175CD3" text-anchor="middle">p-3</text>
+    <text x="48" y="164" font-size="13" font-weight="600" fill="#344054" text-anchor="end">4</text>
+    <rect x="60" y="152" width="48" height="16" rx="3" fill="#D5D9EB"/>
+    <text x="116" y="164" font-size="11" fill="#667085">1rem · 16px</text>
+    <rect x="680" y="152" width="52" height="18" rx="4" fill="#EFF8FF"/>
+    <text x="706" y="165" font-size="10" fill="#175CD3" text-anchor="middle">p-4</text>
+    <text x="48" y="188" font-size="13" font-weight="600" fill="#344054" text-anchor="end">5</text>
+    <rect x="60" y="176" width="60" height="16" rx="3" fill="#D5D9EB"/>
+    <text x="128" y="188" font-size="11" fill="#667085">1.25rem · 20px</text>
+    <rect x="680" y="176" width="52" height="18" rx="4" fill="#EFF8FF"/>
+    <text x="706" y="189" font-size="10" fill="#175CD3" text-anchor="middle">p-5</text>
+    <text x="48" y="212" font-size="13" font-weight="600" fill="#344054" text-anchor="end">6</text>
+    <rect x="60" y="200" width="72" height="16" rx="3" fill="#D5D9EB"/>
+    <text x="140" y="212" font-size="11" fill="#667085">1.5rem · 24px</text>
+    <rect x="680" y="200" width="52" height="18" rx="4" fill="#EFF8FF"/>
+    <text x="706" y="213" font-size="10" fill="#175CD3" text-anchor="middle">p-6</text>
+    <text x="48" y="236" font-size="13" font-weight="600" fill="#344054" text-anchor="end">8</text>
+    <rect x="60" y="224" width="96" height="16" rx="3" fill="#D5D9EB"/>
+    <text x="164" y="236" font-size="11" fill="#667085">2rem · 32px</text>
+    <rect x="680" y="224" width="52" height="18" rx="4" fill="#EFF8FF"/>
+    <text x="706" y="237" font-size="10" fill="#175CD3" text-anchor="middle">p-8</text>
+    <text x="48" y="260" font-size="13" font-weight="600" fill="#344054" text-anchor="end">10</text>
+    <rect x="60" y="248" width="120" height="16" rx="3" fill="#D5D9EB"/>
+    <text x="188" y="260" font-size="11" fill="#667085">2.5rem · 40px</text>
+    <rect x="680" y="248" width="52" height="18" rx="4" fill="#EFF8FF"/>
+    <text x="706" y="261" font-size="10" fill="#175CD3" text-anchor="middle">p-10</text>
+    <text x="48" y="284" font-size="13" font-weight="600" fill="#344054" text-anchor="end">12</text>
+    <rect x="60" y="272" width="144" height="16" rx="3" fill="#D5D9EB"/>
+    <text x="212" y="284" font-size="11" fill="#667085">3rem · 48px</text>
+    <rect x="680" y="272" width="52" height="18" rx="4" fill="#EFF8FF"/>
+    <text x="706" y="285" font-size="10" fill="#175CD3" text-anchor="middle">p-12</text>
+    <text x="48" y="308" font-size="13" font-weight="600" fill="#344054" text-anchor="end">16</text>
+    <rect x="60" y="296" width="192" height="16" rx="3" fill="#D5D9EB"/>
+    <text x="260" y="308" font-size="11" fill="#667085">4rem · 64px</text>
+    <rect x="680" y="296" width="52" height="18" rx="4" fill="#EFF8FF"/>
+    <text x="706" y="309" font-size="10" fill="#175CD3" text-anchor="middle">p-16</text>
+</svg>

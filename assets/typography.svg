@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 380" font-family="Inter, system-ui, sans-serif">
+  <rect width="880" height="380" fill="#FCFCFD"/>
+  <text x="32" y="40" font-size="22" font-weight="700" fill="#101828">Typography Scale</text>
+  <text x="32" y="62" font-size="13" fill="#667085">Inter for UI text · Unilever Desire for brand display · 16px base</text>
+
+  
+    <text x="32" y="100" font-size="10" fill="#98A2B3">Display 2xl · 72px</text>
+    <text x="200" y="100" font-size="52" font-weight="700" fill="#101828">Ag</text>
+    <line x1="32" y1="106" x2="848" y2="106" stroke="#F2F4F7" stroke-width="0.5"/>
+    <text x="32" y="128" font-size="10" fill="#98A2B3">Display xl · 60px</text>
+    <text x="200" y="128" font-size="44" font-weight="700" fill="#101828">Ag</text>
+    <line x1="32" y1="134" x2="848" y2="134" stroke="#F2F4F7" stroke-width="0.5"/>
+    <text x="32" y="156" font-size="10" fill="#98A2B3">Display lg · 48px</text>
+    <text x="200" y="156" font-size="36" font-weight="700" fill="#101828">Ag</text>
+    <line x1="32" y1="162" x2="848" y2="162" stroke="#F2F4F7" stroke-width="0.5"/>
+    <text x="32" y="184" font-size="10" fill="#98A2B3">Display md · 36px</text>
+    <text x="200" y="184" font-size="28" font-weight="600" fill="#101828">Ag</text>
+    <line x1="32" y1="190" x2="848" y2="190" stroke="#F2F4F7" stroke-width="0.5"/>
+    <text x="32" y="212" font-size="10" fill="#98A2B3">Display sm · 30px</text>
+    <text x="200" y="212" font-size="24" font-weight="600" fill="#101828">Ag</text>
+    <line x1="32" y1="218" x2="848" y2="218" stroke="#F2F4F7" stroke-width="0.5"/>
+    <text x="32" y="240" font-size="10" fill="#98A2B3">Display xs · 24px</text>
+    <text x="200" y="240" font-size="20" font-weight="600" fill="#101828">Ag — Heading</text>
+    <line x1="32" y1="246" x2="848" y2="246" stroke="#F2F4F7" stroke-width="0.5"/>
+    <text x="32" y="268" font-size="10" fill="#98A2B3">Text lg · 18px</text>
+    <text x="200" y="268" font-size="16" font-weight="400" fill="#344054">The quick brown fox jumps over the lazy dog</text>
+    <line x1="32" y1="274" x2="848" y2="274" stroke="#F2F4F7" stroke-width="0.5"/>
+    <text x="32" y="296" font-size="10" fill="#98A2B3">Text md · 16px</text>
+    <text x="200" y="296" font-size="15" font-weight="400" fill="#344054">The quick brown fox jumps over the lazy dog</text>
+    <line x1="32" y1="302" x2="848" y2="302" stroke="#F2F4F7" stroke-width="0.5"/>
+    <text x="32" y="324" font-size="10" fill="#98A2B3">Text sm · 14px</text>
+    <text x="200" y="324" font-size="13.5" font-weight="400" fill="#344054">The quick brown fox jumps over the lazy dog</text>
+    <line x1="32" y1="330" x2="848" y2="330" stroke="#F2F4F7" stroke-width="0.5"/>
+    <text x="32" y="352" font-size="10" fill="#98A2B3">Text xs · 12px</text>
+    <text x="200" y="352" font-size="12" font-weight="400" fill="#667085">The quick brown fox jumps over the lazy dog</text>
+    <line x1="32" y1="358" x2="848" y2="358" stroke="#F2F4F7" stroke-width="0.5"/>
+</svg>

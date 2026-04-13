@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" font-family="Inter, system-ui, sans-serif">
+  <rect width="880" height="420" fill="#FCFCFD"/>
+  <text x="32" y="40" font-size="22" font-weight="700" fill="#101828">Inputs, Badges &amp; Widgets</text>
+  <text x="32" y="62" font-size="13" fill="#667085">Form controls, status indicators, tabs, and interactive elements</text>
+
+  <!-- Text Input -->
+  <text x="32" y="100" font-size="11" font-weight="600" fill="#667085" letter-spacing="0.08em">TEXT INPUT</text>
+  <text x="32" y="120" font-size="13" font-weight="500" fill="#344054">Your message:</text>
+  <rect x="32" y="128" width="280" height="40" rx="8" fill="white" stroke="#D0D5DD" stroke-width="1"/>
+  <text x="46" y="153" font-size="14" fill="#98A2B3">Type your message here</text>
+  <text x="32" y="186" font-size="13" fill="#667085">Your message will be sent to the support team.</text>
+
+  <!-- Focus state -->
+  <text x="340" y="100" font-size="11" font-weight="600" fill="#667085" letter-spacing="0.08em">FOCUSED STATE</text>
+  <text x="340" y="120" font-size="13" font-weight="500" fill="#344054">Email</text>
+  <rect x="340" y="128" width="220" height="40" rx="8" fill="white" stroke="#B692F6" stroke-width="2"/>
+  <rect x="336" y="124" width="228" height="48" rx="11" fill="none" stroke="#F4EBFF" stroke-width="4"/>
+  <text x="354" y="153" font-size="14" fill="#101828">pietro@gmail.com</text>
+  <rect x="572" y="128" width="90" height="40" rx="8" fill="#6941C6"/>
+  <text x="617" y="153" font-size="14" font-weight="600" fill="white" text-anchor="middle">Subscribe</text>
+
+  <!-- Status Badges -->
+  <text x="32" y="226" font-size="11" font-weight="600" fill="#667085" letter-spacing="0.08em">STATUS BADGES</text>
+  <!-- Active -->
+  <rect x="32" y="238" width="70" height="24" rx="12" fill="#ECFDF3"/>
+  <circle cx="48" cy="250" r="3" fill="#12B76A"/>
+  <text x="57" y="255" font-size="12" font-weight="500" fill="#027A48">Active</text>
+  <!-- Inactive -->
+  <rect x="112" y="238" width="78" height="24" rx="12" fill="#FEF3F2"/>
+  <circle cx="128" cy="250" r="3" fill="#F04438"/>
+  <text x="137" y="255" font-size="12" font-weight="500" fill="#B42318">Inactive</text>
+  <!-- Version -->
+  <rect x="200" y="238" width="76" height="24" rx="12" fill="#F9F5FF"/>
+  <text x="238" y="255" font-size="12" font-weight="500" fill="#6941C6" text-anchor="middle">Version 1</text>
+  <!-- Info -->
+  <rect x="286" y="238" width="50" height="24" rx="12" fill="#EFF8FF"/>
+  <text x="311" y="255" font-size="12" font-weight="500" fill="#175CD3" text-anchor="middle">Info</text>
+  <!-- Pending -->
+  <rect x="346" y="238" width="76" height="24" rx="12" fill="#FFFAEB"/>
+  <circle cx="362" cy="250" r="3" fill="#F79009"/>
+  <text x="371" y="255" font-size="12" font-weight="500" fill="#B54708">Pending</text>
+
+  <!-- Tabs -->
+  <text x="32" y="296" font-size="11" font-weight="600" fill="#667085" letter-spacing="0.08em">UNDERLINE TABS</text>
+  <line x1="32" y1="330" x2="400" y2="330" stroke="#E4E7EC" stroke-width="1"/>
+  <text x="44" y="322" font-size="14" font-weight="600" fill="#6941C6">Getting started</text>
+  <line x1="32" y1="328" x2="142" y2="328" stroke="#6941C6" stroke-width="2"/>
+  <text x="170" y="322" font-size="14" fill="#667085">Components</text>
+  <text x="280" y="322" font-size="14" fill="#667085">Documentation</text>
+
+  <!-- Pill Tabs -->
+  <text x="440" y="296" font-size="11" font-weight="600" fill="#667085" letter-spacing="0.08em">PILL TABS</text>
+  <rect x="440" y="304" width="200" height="36" rx="8" fill="#F2F4F7"/>
+  <rect x="444" y="308" width="90" height="28" rx="6" fill="white" stroke="#E4E7EC" stroke-width="0.5"/>
+  <text x="489" y="327" font-size="13" font-weight="500" fill="#344054" text-anchor="middle">Default</text>
+  <text x="583" y="327" font-size="13" fill="#667085" text-anchor="middle">Automatic</text>
+
+  <!-- Checkbox & Radio -->
+  <text x="32" y="368" font-size="11" font-weight="600" fill="#667085" letter-spacing="0.08em">CHECKBOX &amp; RADIO</text>
+  <rect x="32" y="380" width="16" height="16" rx="4" fill="#F9F5FF" stroke="#6941C6" stroke-width="2"/>
+  <text x="36" y="393" font-size="12" font-weight="700" fill="#6941C6">✓</text>
+  <text x="56" y="394" font-size="13" font-weight="500" fill="#344054">Accept terms and condition</text>
+  
+  <circle cx="300" cy="388" r="8" fill="white" stroke="#6941C6" stroke-width="5"/>
+  <text x="316" y="393" font-size="13" fill="#344054">Option A</text>
+  <circle cx="404" cy="388" r="8" fill="white" stroke="#D0D5DD" stroke-width="2"/>
+  <text x="420" y="393" font-size="13" fill="#344054">Option B</text>
+
+  <!-- Chat Input -->
+  <text x="500" y="226" font-size="11" font-weight="600" fill="#667085" letter-spacing="0.08em">CHAT INPUT WIDGET</text>
+  <rect x="500" y="238" width="360" height="88" rx="12" fill="white" stroke="#E4E7EC" stroke-width="1"/>
+  <text x="520" y="264" font-size="14" fill="#98A2B3">What would you like to know?</text>
+  <line x1="520" y1="278" x2="840" y2="278" stroke="#F2F4F7" stroke-width="1"/>
+  <text x="520" y="306" font-size="16" fill="#98A2B3">📎  ⟨/⟩  🎤</text>
+  <rect x="816" y="288" width="32" height="32" rx="8" fill="#6941C6"/>
+  <text x="832" y="310" font-size="14" fill="white" text-anchor="middle">➤</text>
+</svg>

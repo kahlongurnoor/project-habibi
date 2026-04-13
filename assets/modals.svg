@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 320" font-family="Inter, system-ui, sans-serif">
+  <rect width="880" height="320" fill="#475467" rx="12"/>
+  <text x="32" y="32" font-size="15" font-weight="600" fill="rgba(255,255,255,0.7)">Modals &amp; Confirmation Dialogs</text>
+
+  <!-- Success Modal -->
+  <rect x="32" y="52" width="260" height="250" rx="12" fill="white"/>
+  <circle cx="162" cy="96" r="24" fill="#D1FADF"/>
+  <text x="162" y="104" font-size="20" fill="#039855" text-anchor="middle">✓</text>
+  <text x="162" y="140" font-size="16" font-weight="600" fill="#101828" text-anchor="middle">Payment successful</text>
+  <text x="162" y="162" font-size="13" fill="#667085" text-anchor="middle">Your payment has been</text>
+  <text x="162" y="178" font-size="13" fill="#667085" text-anchor="middle">processed successfully.</text>
+  <rect x="52" y="200" width="220" height="40" rx="8" fill="#6941C6"/>
+  <text x="162" y="225" font-size="14" font-weight="600" fill="white" text-anchor="middle">Go to Dashboard</text>
+
+  <!-- Destructive Modal -->
+  <rect x="310" y="52" width="260" height="250" rx="12" fill="white"/>
+  <circle cx="440" cy="96" r="24" fill="#FEE4E2"/>
+  <text x="440" y="104" font-size="20" fill="#D92D20" text-anchor="middle">⚠</text>
+  <text x="440" y="140" font-size="16" font-weight="600" fill="#101828" text-anchor="middle">Deactivate account</text>
+  <text x="440" y="162" font-size="13" fill="#667085" text-anchor="middle">Are you sure? This action</text>
+  <text x="440" y="178" font-size="13" fill="#667085" text-anchor="middle">cannot be undone.</text>
+  <rect x="325" y="200" width="110" height="40" rx="8" fill="white" stroke="#D0D5DD" stroke-width="1"/>
+  <text x="380" y="225" font-size="14" font-weight="600" fill="#344054" text-anchor="middle">Cancel</text>
+  <rect x="445" y="200" width="110" height="40" rx="8" fill="#D92D20"/>
+  <text x="500" y="225" font-size="14" font-weight="600" fill="white" text-anchor="middle">Deactivate</text>
+
+  <!-- Info Modal -->
+  <rect x="588" y="52" width="260" height="250" rx="12" fill="white"/>
+  <text x="608" y="82" font-size="15" font-weight="600" fill="#101828">Feedback Details</text>
+  <text x="828" y="82" font-size="16" fill="#98A2B3" text-anchor="end">✕</text>
+  <line x1="608" y1="94" x2="828" y2="94" stroke="#F2F4F7" stroke-width="1"/>
+  <text x="608" y="118" font-size="12" fill="#667085">Timestamp</text>
+  <text x="828" y="118" font-size="12" fill="#101828" text-anchor="end">4:15 PM</text>
+  <text x="608" y="144" font-size="12" fill="#667085">Status</text>
+  <rect x="782" y="132" width="50" height="20" rx="10" fill="#ECFDF3"/>
+  <text x="807" y="146" font-size="10" font-weight="500" fill="#027A48" text-anchor="middle">Active</text>
+  <text x="608" y="170" font-size="12" fill="#667085">Version</text>
+  <text x="828" y="170" font-size="12" fill="#101828" text-anchor="end">v2.1</text>
+  <line x1="608" y1="184" x2="828" y2="184" stroke="#E4E7EC" stroke-width="1"/>
+  <rect x="688" y="196" width="64" height="34" rx="8" fill="white" stroke="#D0D5DD" stroke-width="1"/>
+  <text x="720" y="218" font-size="12" font-weight="600" fill="#344054" text-anchor="middle">Close</text>
+  <rect x="760" y="196" width="72" height="34" rx="8" fill="#6941C6"/>
+  <text x="796" y="218" font-size="12" font-weight="600" fill="white" text-anchor="middle">Save</text>
+</svg>
