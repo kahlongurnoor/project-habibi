@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 480" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="heroGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#EFF8FF"/>
+      <stop offset="100%" stop-color="white"/>
+    </linearGradient>
+  </defs>
+  <rect width="880" height="480" fill="white"/>
+  <rect width="880" height="220" fill="url(#heroGrad)"/>
+
+  <rect x="355" y="24" width="170" height="28" rx="14" fill="white" stroke="#E4E7EC" stroke-width="1"/>
+  <text x="440" y="43" font-size="12" fill="#667085" text-anchor="middle">✦ AI Chat UI Component Library</text>
+  <text x="440" y="90" font-size="32" font-weight="800" fill="#101828" text-anchor="middle">Build Beautiful AI Chat</text>
+  <text x="440" y="126" font-size="32" font-weight="800" fill="#101828" text-anchor="middle">Interfaces</text>
+  <text x="440" y="158" font-size="14" fill="#667085" text-anchor="middle">A comprehensive UI library for ChatGPT, Claude, and Gemini.</text>
+  <text x="440" y="176" font-size="14" fill="#667085" text-anchor="middle">Fully themeable and production-ready.</text>
+
+  <rect x="340" y="196" width="140" height="40" rx="8" fill="#101828"/>
+  <text x="410" y="221" font-size="13" font-weight="600" fill="white" text-anchor="middle">⚙ View Components</text>
+  <rect x="490" y="196" width="120" height="40" rx="8" fill="white" stroke="#D0D5DD" stroke-width="1"/>
+  <text x="550" y="221" font-size="13" font-weight="600" fill="#344054" text-anchor="middle">☐ Live Demo</text>
+
+  <!-- What's Included -->
+  <text x="440" y="280" font-size="18" font-weight="700" fill="#101828" text-anchor="middle">What's Included</text>
+  <text x="440" y="300" font-size="13" fill="#667085" text-anchor="middle">Everything you need to build professional AI chat interfaces</text>
+
+  
+  <rect x="60" y="316" width="180" height="90" rx="10" fill="white" stroke="#E4E7EC" stroke-width="1"/>
+  <rect x="76" y="330" width="32" height="32" rx="8" fill="#EFF8FF"/>
+  <text x="92" y="352" font-size="16" text-anchor="middle">💬</text>
+  <text x="76" y="378" font-size="13" font-weight="600" fill="#101828">Chat Components</text>
+  <text x="76" y="394" font-size="11" fill="#667085">Message bubbles and threads</text>
+  
+  <rect x="260" y="316" width="180" height="90" rx="10" fill="white" stroke="#E4E7EC" stroke-width="1"/>
+  <rect x="276" y="330" width="32" height="32" rx="8" fill="#F9F5FF"/>
+  <text x="292" y="352" font-size="16" text-anchor="middle">🏠</text>
+  <text x="276" y="378" font-size="13" font-weight="600" fill="#101828">Navigation</text>
+  <text x="276" y="394" font-size="11" fill="#667085">Sidebar and responsive menus</text>
+  
+  <rect x="460" y="316" width="180" height="90" rx="10" fill="white" stroke="#E4E7EC" stroke-width="1"/>
+  <rect x="476" y="330" width="32" height="32" rx="8" fill="#FEF3F2"/>
+  <text x="492" y="352" font-size="16" text-anchor="middle">📊</text>
+  <text x="476" y="378" font-size="13" font-weight="600" fill="#101828">Data Visualization</text>
+  <text x="476" y="394" font-size="11" fill="#667085">Charts, graphs, analytics</text>
+  
+  <rect x="660" y="316" width="180" height="90" rx="10" fill="white" stroke="#E4E7EC" stroke-width="1"/>
+  <rect x="676" y="330" width="32" height="32" rx="8" fill="#ECFDF3"/>
+  <text x="692" y="352" font-size="16" text-anchor="middle">🔧</text>
+  <text x="676" y="378" font-size="13" font-weight="600" fill="#101828">Tool Integrations</text>
+  <text x="676" y="394" font-size="11" fill="#667085">Tool call UI, notifications</text>
+  
+
+  <!-- Theme System -->
+  <rect x="100" y="424" width="680" height="48" rx="10" fill="#F9FAFB" stroke="#E4E7EC" stroke-width="1"/>
+  <text x="440" y="440" font-size="13" font-weight="600" fill="#101828" text-anchor="middle">Shadcn-Style Theme System</text>
+  
+  <rect x="160" y="448" width="80" height="20" rx="10" fill="#18181b"/>
+  <text x="200" y="462" font-size="9" font-weight="500" fill="white" text-anchor="middle">Primary</text>
+  
+  <rect x="280" y="448" width="80" height="20" rx="10" fill="#F4F4F5"/>
+  <text x="320" y="462" font-size="9" font-weight="500" fill="#101828" text-anchor="middle">Secondary</text>
+  
+  <rect x="400" y="448" width="80" height="20" rx="10" fill="#ef4444"/>
+  <text x="440" y="462" font-size="9" font-weight="500" fill="white" text-anchor="middle">Destructive</text>
+  
+  <rect x="520" y="448" width="80" height="20" rx="10" fill="#18b981"/>
+  <text x="560" y="462" font-size="9" font-weight="500" fill="white" text-anchor="middle">Success</text>
+  
+  <rect x="640" y="448" width="80" height="20" rx="10" fill="#f59e0b"/>
+  <text x="680" y="462" font-size="9" font-weight="500" fill="white" text-anchor="middle">Warning</text>
+  
+</svg>

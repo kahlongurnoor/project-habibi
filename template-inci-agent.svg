@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 260" font-family="Inter, system-ui, sans-serif">
+  <rect width="880" height="260" fill="#F9FAFB"/>
+  <rect x="32" y="16" width="816" height="228" rx="12" fill="white" stroke="#E4E7EC" stroke-width="1"/>
+
+  <text x="72" y="48" font-size="13" fill="#667085">🌐 Target Location/Language:</text>
+  <text x="260" y="48" font-size="13" font-weight="700" fill="#101828">INCI:Canada/ English_CA</text>
+
+  <text x="52" y="80" font-size="14" font-weight="600" fill="#101828">≡ Ingredient List:</text>
+  <rect x="52" y="90" width="776" height="44" rx="6" fill="#F9FAFB" stroke="#E4E7EC" stroke-width="1"/>
+  <text x="66" y="108" font-size="11" fill="#344054">Ingredients/Ingrédients: Aqua, Glycerin, Hydrated Silica, Sodium Lauroyl Isethionate, Stearic Acid,</text>
+  <text x="66" y="124" font-size="11" fill="#344054">Sodium Stearate, Parfum, Cocamidopropyl Betaine, Lauric Acid, Sodium Oleate...</text>
+
+  <text x="52" y="156" font-size="14" font-weight="600" fill="#101828">📋 Ingredient statements:</text>
+  <!-- Table -->
+  <rect x="52" y="166" width="776" height="24" fill="#F2F4F7" rx="4"/>
+  <text x="72" y="182" font-size="11" font-weight="600" fill="#344054">Purpose</text>
+  <text x="260" y="182" font-size="11" font-weight="600" fill="#344054">Statement</text>
+  <rect x="52" y="190" width="776" height="44" fill="white" stroke="#E4E7EC" stroke-width="1"/>
+  <text x="72" y="210" font-size="11" fill="#F04438">⚠ SAFETY INSTRUCTIONS</text>
+  <text x="260" y="206" font-size="11" fill="#344054">US/Canada Body Scrub:</text>
+  <text x="260" y="222" font-size="11" fill="#344054"><tspan font-weight="700" fill="#D92D20">CAUTION:</tspan> AVOID CONTACT WITH EYES. IF CONTACT OCCURS, RINSE.</text>
+</svg>

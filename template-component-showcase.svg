@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 520" font-family="Inter, system-ui, sans-serif">
+  <rect width="880" height="520" fill="white"/>
+  <text x="32" y="28" font-size="11" fill="#2E90FA">← Back to Home</text>
+  <text x="200" y="28" font-size="14" font-weight="600" fill="#101828">⚙ Component Showcase</text>
+  <rect x="760" y="12" width="90" height="28" rx="6" fill="#101828"/>
+  <text x="805" y="31" font-size="11" fill="white" text-anchor="middle">Dark Mode</text>
+
+  <!-- 1. Chat Cards -->
+  <text x="32" y="62" font-size="14" font-weight="600" fill="#101828">1. Chat Cards</text>
+  <rect x="32" y="72" width="200" height="50" rx="10" fill="white" stroke="#E4E7EC" stroke-width="1"/>
+  <text x="72" y="94" font-size="12" font-weight="600" fill="#101828">General Assistant</text>
+  <text x="72" y="110" font-size="10" fill="#667085">Get help with everyday tasks</text>
+  <rect x="244" y="72" width="200" height="50" rx="10" fill="#2E90FA"/>
+  <text x="284" y="94" font-size="12" font-weight="600" fill="white">Creative Writing</text>
+  <text x="284" y="110" font-size="10" fill="rgba(255,255,255,0.7)">Brainstorm and write content</text>
+  <rect x="32" y="128" width="200" height="50" rx="10" fill="#101828"/>
+  <text x="72" y="150" font-size="12" font-weight="600" fill="white">Code Helper</text>
+  <text x="72" y="166" font-size="10" fill="rgba(255,255,255,0.6)">Debug code and get assistance</text>
+  <rect x="244" y="128" width="200" height="50" rx="10" fill="#F9F5FF"/>
+  <text x="284" y="150" font-size="12" font-weight="600" fill="#6941C6">Personal Tutor</text>
+  <text x="284" y="166" font-size="10" fill="#667085">Learn new concepts</text>
+
+  <!-- 2. Chat Conversation -->
+  <text x="500" y="62" font-size="14" font-weight="600" fill="#101828">2. Chat Conversation</text>
+  <rect x="500" y="72" width="360" height="106" rx="10" fill="#F9FAFB" stroke="#E4E7EC" stroke-width="1"/>
+  <circle cx="520" cy="92" r="10" fill="#2E90FA"/>
+  <text x="540" y="90" font-size="10" font-weight="600" fill="#101828">You</text>
+  <text x="540" y="104" font-size="11" fill="#344054">Can you help me understand the difference?</text>
+  <circle cx="520" cy="130" r="10" fill="#EFF8FF"/>
+  <text x="520" y="134" font-size="8" fill="#2E90FA" text-anchor="middle">AI</text>
+  <text x="540" y="128" font-size="10" font-weight="600" fill="#101828">AI Assistant</text>
+  <text x="540" y="142" font-size="11" fill="#344054">Machine learning is a broad field of AI...</text>
+  <text x="540" y="168" font-size="11" fill="#344054">📋 👍 👎</text>
+
+  <!-- 6. Graphs and Charts -->
+  <text x="32" y="206" font-size="14" font-weight="600" fill="#101828">6. Graphs and Charts</text>
+  <rect x="32" y="216" width="200" height="120" rx="10" fill="white" stroke="#E4E7EC" stroke-width="1"/>
+  <text x="52" y="238" font-size="11" fill="#667085">Conversation Volume</text>
+  <text x="192" y="238" font-size="10" fill="#12B76A" text-anchor="end">↗12.5%</text>
+  <text x="52" y="262" font-size="22" font-weight="700" fill="#101828">2,543</text>
+  <polyline points="52,320 80,308 110,312 140,300 170,305 200,290" fill="none" stroke="#101828" stroke-width="1.5"/>
+
+  <rect x="244" y="216" width="200" height="120" rx="10" fill="white" stroke="#E4E7EC" stroke-width="1"/>
+  <text x="264" y="238" font-size="11" fill="#667085">Response Time</text>
+  <text x="404" y="238" font-size="10" fill="#F04438" text-anchor="end">↘8.3%</text>
+  <text x="264" y="262" font-size="22" font-weight="700" fill="#101828">1.2s</text>
+  <path d="M264,320 Q310,290 354,300 Q398,310 424,280" fill="rgba(46,144,250,0.1)" stroke="#2E90FA" stroke-width="1.5"/>
+
+  <!-- 7. Action Cards with Images -->
+  <text x="32" y="360" font-size="14" font-weight="600" fill="#101828">7. Action Cards with Images</text>
+  
+  <rect x="32" y="372" width="145" height="120" rx="10" fill="white" stroke="#E4E7EC" stroke-width="1"/>
+  <rect x="32" y="372" width="145" height="70" rx="10" fill="#D1E9FF"/>
+  <text x="105" y="468" font-size="11" font-weight="600" fill="#101828" text-anchor="middle">Project Overview</text>
+  <text x="56" y="484" font-size="9" fill="#2E90FA">👁 View</text>
+  <text x="105" y="484" font-size="9" fill="#667085">✏ Edit</text>
+  
+  <rect x="192" y="372" width="145" height="120" rx="10" fill="white" stroke="#E4E7EC" stroke-width="1"/>
+  <rect x="192" y="372" width="145" height="70" rx="10" fill="#293056"/>
+  <text x="265" y="468" font-size="11" font-weight="600" fill="#101828" text-anchor="middle">Analytics Dashboard</text>
+  <text x="216" y="484" font-size="9" fill="#2E90FA">👁 View</text>
+  <text x="265" y="484" font-size="9" fill="#667085">⬇ Download</text>
+  
+  <rect x="352" y="372" width="145" height="120" rx="10" fill="white" stroke="#E4E7EC" stroke-width="1"/>
+  <rect x="352" y="372" width="145" height="70" rx="10" fill="#FEF0C7"/>
+  <text x="425" y="468" font-size="11" font-weight="600" fill="#101828" text-anchor="middle">Team Collaboration</text>
+  <text x="376" y="484" font-size="9" fill="#2E90FA">👁 View</text>
+  <text x="425" y="484" font-size="9" fill="#667085">⬆ Share</text>
+  
+
+  <!-- 8. Tool Call UI -->
+  <text x="500" y="206" font-size="14" font-weight="600" fill="#101828">8. Tool Call UI</text>
+  <rect x="500" y="216" width="360" height="28" rx="6" fill="#ECFDF3" stroke="#6CE9A6" stroke-width="1"/>
+  <text x="524" y="235" font-size="11" fill="#027A48">● search_database</text>
+  <text x="840" y="235" font-size="12" fill="#12B76A" text-anchor="end">✓</text>
+  <rect x="500" y="250" width="360" height="28" rx="6" fill="#FFFAEB" stroke="#FEC84B" stroke-width="1"/>
+  <text x="524" y="269" font-size="11" fill="#B54708">◐ execute_code — Processing...</text>
+  <rect x="500" y="284" width="360" height="28" rx="6" fill="#FEF3F2" stroke="#FDA29B" stroke-width="1"/>
+  <text x="524" y="303" font-size="11" fill="#B42318">✕ api_request</text>
+
+  <!-- 9. Toast Notifications -->
+  <text x="500" y="336" font-size="14" font-weight="600" fill="#101828">9. Toast Notifications</text>
+  <rect x="500" y="348" width="110" height="30" rx="6" fill="#12B76A"/>
+  <text x="555" y="368" font-size="11" font-weight="600" fill="white" text-anchor="middle">Success Toast</text>
+  <rect x="618" y="348" width="110" height="30" rx="6" fill="#F04438"/>
+  <text x="673" y="368" font-size="11" font-weight="600" fill="white" text-anchor="middle">Error Toast</text>
+  <rect x="736" y="348" width="110" height="30" rx="6" fill="#F79009"/>
+  <text x="791" y="368" font-size="11" font-weight="600" fill="white" text-anchor="middle">Warning Toast</text>
+  <rect x="500" y="384" width="110" height="30" rx="6" fill="#2E90FA"/>
+  <text x="555" y="404" font-size="11" font-weight="600" fill="white" text-anchor="middle">Info Toast</text>
+  <rect x="618" y="384" width="110" height="30" rx="6" fill="#6941C6"/>
+  <text x="673" y="404" font-size="11" font-weight="600" fill="white" text-anchor="middle">Custom Toast</text>
+  <rect x="736" y="384" width="110" height="30" rx="6" fill="#E4E7EC"/>
+  <text x="791" y="404" font-size="11" font-weight="500" fill="#344054" text-anchor="middle">Loading Toast</text>
+</svg>
